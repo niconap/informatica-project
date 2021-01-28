@@ -29,11 +29,3 @@ Ontwerp bedrijf: iedereen
 PHP site: iedereen  
 
 Alles moet af op 6 juni 2021.
-
-#### Logboek
-
-17 Januari:
-Iedereen:
-Plan van aanpak gestart
-Trello aangemaakt
-Google Documenten aangemaakt
