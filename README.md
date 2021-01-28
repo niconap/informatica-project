@@ -18,15 +18,15 @@ Wij willen graag dat de vader van Felix zijn kunstwerken kan verkopen door midde
 
 #### Taken, data en uitvoerder
 
-Presentatie voorbereiding: iedereen
-Presentatie: iedereen
-SQL database: Nico (?)
-Briefpapier: Koen (?)
-Bedrijfslogo: Felix
-Handout cards: Felix
-Weebly website: iedereen
-Ontwerp bedrijf: iedereen
-PHP site: iedereen
+Presentatie voorbereiding: iedereen  
+Presentatie: iedereen  
+SQL database: Nico (?)  
+Briefpapier: Koen (?)  
+Bedrijfslogo: Felix  
+Handout cards: Felix  
+Weebly website: iedereen  
+Ontwerp bedrijf: iedereen  
+PHP site: iedereen  
 
 Alles moet af op 6 juni 2021.
 
