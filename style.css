@@ -3,6 +3,7 @@
 * {
   margin: auto;
   outline: none;
+  scroll-behavior: smooth;
   font-family: ProximaNW01-Reg, Arial, Helvetica, sans-serif;
 }
 
