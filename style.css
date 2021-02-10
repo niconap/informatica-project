@@ -1,10 +1,10 @@
-@import url(https://db.onlinewebfonts.com/c/55c4f556836775174bfac94178a3fe82?family=ProximaNW01-Reg);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 * {
   margin: auto;
   outline: none;
   scroll-behavior: smooth;
-  font-family: ProximaNW01-Reg, Arial, Helvetica, sans-serif;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -78,7 +78,8 @@ nav a:hover {
   font-weight: lighter;
 }
 
-button {
+#shopnow {
+  text-decoration: none;
   position: relative;
   top: 370px;
   border: none;
@@ -89,7 +90,7 @@ button {
   transition: background-color 0.2s ease;
 }
 
-button:hover {
+#shopnow:hover {
   background-color: rgb(253, 170, 183);
   cursor: pointer;
 }
@@ -103,7 +104,7 @@ button:hover {
 
 #ourcollection h3 {
   margin-bottom: 50px;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 25px;
   letter-spacing: 10px;
 }
