@@ -6,6 +6,10 @@
   font-family: ProximaNW01-Reg, Arial, Helvetica, sans-serif;
 }
 
+body {
+  background-color: rgb(241, 240, 240);
+}
+
 nav {
   background-color: rgb(241, 240, 240);
   position: fixed;
@@ -15,6 +19,7 @@ nav {
   grid-template-areas: "title navigation shopping";
   padding: 25px;
   top: 0px;
+  z-index: 100;
 }
 
 nav p {
@@ -86,4 +91,18 @@ button {
 button:hover {
   background-color: rgb(253, 170, 183);
   cursor: pointer;
+}
+
+#ourcollection {
+  background-color: white;
+  padding: 100px;
+  margin: 50px;
+  text-align: center;
+}
+
+#ourcollection h3 {
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 10px;
 }
