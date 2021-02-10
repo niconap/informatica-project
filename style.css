@@ -1,5 +1,46 @@
 @import url(//db.onlinewebfonts.com/c/55c4f556836775174bfac94178a3fe82?family=ProximaNW01-Reg);
 
 * {
+  margin: auto;
   font-family: ProximaNW01-Reg, Arial, Helvetica, sans-serif;
+}
+
+nav {
+  background-color: rgb(241, 240, 240);
+  position: fixed;
+  max-height: 150px;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "title navigation shopping";
+  padding: 25px;
+}
+
+nav p {
+  grid-area: title;
+  margin-left: 25px;
+}
+
+nav ul {
+  grid-area: navigation;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+nav img {
+  grid-area: shopping;
+  margin-right: 75px;
+}
+
+nav a {
+  color: #121212;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: rgb(255, 67, 67);
 }
