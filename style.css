@@ -56,7 +56,8 @@ nav a:hover {
 #landingtext {
   margin-top: 100px;
   text-align: center;
-  background-image: url("home-achtergrond.webp");
+  background-image: url("home-achtergrond.jpg");
+  background-position: center;
   background-size: cover;
   margin-left: 50px;
   margin-right: 50px;
