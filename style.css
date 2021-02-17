@@ -2,6 +2,7 @@
 
 * {
   margin: auto;
+  overflow-x: hidden;
   outline: none;
   scroll-behavior: smooth;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -91,7 +92,8 @@ nav a:hover {
   transition: background-color 0.2s ease;
 }
 
-#shopnow:hover {
+#shopnow:hover,
+.item a:hover {
   background-color: rgb(253, 170, 183);
   cursor: pointer;
 }
@@ -108,4 +110,59 @@ nav a:hover {
   font-weight: 600;
   font-size: 25px;
   letter-spacing: 10px;
+}
+
+#shop {
+  margin: 50px;
+  font-size: 0;
+}
+
+.item {
+  width: calc(100% / 3);
+  margin: 0px;
+  text-align: center;
+  font-size: 14px;
+  display: inline-block;
+  height: 450px;
+  overflow: hidden;
+}
+
+.itemimg {
+  min-height: 300px;
+  max-width: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+#dancer {
+  background-image: url("dancer.jpg");
+}
+
+#face {
+  background-image: url("face.jpg");
+}
+
+#purplehead {
+  background-image: url("purplehead.jpg");
+}
+
+.itemdescription {
+  margin-top: 15px;
+  display: block;
+}
+
+.itemprice {
+  margin-top: 15px;
+  display: block;
+  color: rgb(160, 160, 160);
+  margin-bottom: 15px;
+}
+
+.item a {
+  border: none;
+  background-color: #121212;
+  color: white;
+  padding: 10px 55px 10px 55px;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
 }
