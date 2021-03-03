@@ -42,6 +42,8 @@ nav li {
 nav img {
   grid-area: shopping;
   margin-right: 75px;
+  max-height: 40px;
+  max-width: 40px;
 }
 
 nav a {
@@ -70,7 +72,7 @@ nav a:hover {
   position: relative;
   top: 330px;
   font-size: 75px;
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 #landingtext h3 {
@@ -165,4 +167,21 @@ nav a:hover {
   padding: 10px 55px 10px 55px;
   font-size: 15px;
   transition: background-color 0.2s ease;
+}
+
+#aboutcontent {
+  margin-top: 100px;
+  background-color: white;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+#aboutcontent h2 {
+  letter-spacing: 10px;
+  padding: 5%;
+}
+
+#description {
+  margin-bottom: 3%;
 }
