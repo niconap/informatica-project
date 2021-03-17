@@ -175,6 +175,7 @@ nav a:hover {
   margin-left: 50px;
   margin-right: 50px;
   text-align: center;
+  min-height: 30em;
 }
 
 #aboutcontent h2 {
@@ -184,4 +185,12 @@ nav a:hover {
 
 #description {
   margin-bottom: 3%;
+}
+
+#aboutimg {
+  width: 40%;
+  margin-top: -10em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
