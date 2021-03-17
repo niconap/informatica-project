@@ -194,3 +194,24 @@ nav a:hover {
   margin-right: auto;
   display: block;
 }
+
+#contact {
+  background-color: white;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 10px;
+  display: grid;
+  grid-template-areas: "info form";
+}
+
+#info {
+  grid-area: info;
+}
+
+#contactform {
+  grid-area: form;
+}
+
+#form input {
+  display: inline-block;
+}
