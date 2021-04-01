@@ -15,7 +15,7 @@
             <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#ourcollection">Shop</a></li>
-            <li><a href="./about.html">Over</a></li>
+            <li><a href="./about.php">Over</a></li>
             <li><a href="#">More</a></li>
             </ul>
             <img alt="Shopping cart" src="shoppingcart.svg" />
