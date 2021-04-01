@@ -67,13 +67,12 @@
             "description" => "Paars Hoofd",
             "price" => "€50,00",),
         );
+        
+        foreach ($array as $element) {
+            $item = new Shopitem($element["img"], $element["description"], $element["price"]);
+            echo $item->getItem();
+        }
 
-        $firstItem = new Shopitem($array["dancer"]["img"], $array["dancer"]["description"], $array["dancer"]["price"]);
-        echo $firstItem->getItem();
-        $secondItem = new Shopitem($array["face"]["img"], $array["face"]["description"], $array["face"]["price"]);
-        echo $secondItem->getItem();
-        $thirdItem = new Shopitem($array["purplehead"]["img"], $array["purplehead"]["description"], $array["purplehead"]["price"]);
-        echo $thirdItem->getItem();
         echo '</div>'
     ?>
 </body>
