@@ -42,12 +42,12 @@
             public $itemprice;
 
             public function getItem() {
-                echo '<div class="item">';
-                echo '<div id="'. $this->itemimg .'" class="itemimg"></div>';
-                echo '<span class="itemdescription">'. $this->itemdescription .'</span>';
-                echo '<span class="itemprice">'. $this->itemprice .'</span>';
-                echo '<a>Zie details</a>';
-                echo '</div>';
+                echo '<div class="item">
+                        <img src="'. $this->itemimg .'" class="itemimg" />
+                        <span class="itemdescription">'. $this->itemdescription .'</span>
+                        <span class="itemprice">'. $this->itemprice .'</span>
+                        <a>Zie details</a>
+                    </div>';
             }
 
             public function __construct($itemimg, $itemdescription, $itemprice) {
@@ -58,13 +58,13 @@
         }
 
         $array = array(
-            "dancer" => array("img" => "dancer",
+            "dancer" => array("img" => "./dancer.jpg",
             "description" => "Danser",
             "price" => "€50,00",),
-            "face" => array("img" => "face",
+            "face" => array("img" => "./face.jpg",
             "description" => "Oranje-rood Hoofd",
             "price" => "€50,00",),
-            "purplehead" => array("img" => "purplehead",
+            "purplehead" => array("img" => "./purplehead.jpg",
             "description" => "Paars Hoofd",
             "price" => "€50,00",),
         );

@@ -72,22 +72,8 @@
   }
   
   .itemimg {
-    min-height: 300px;
+    height: 300px;
     max-width: 300px;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  #dancer {
-    background-image: url("dancer.jpg");
-  }
-  
-  #face {
-    background-image: url("face.jpg");
-  }
-  
-  #purplehead {
-    background-image: url("purplehead.jpg");
   }
   
   .itemdescription {
