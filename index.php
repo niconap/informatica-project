@@ -67,6 +67,9 @@
             "purplehead" => array("img" => "./purplehead.jpg",
             "description" => "Paars Hoofd",
             "price" => "€50,00",),
+            "puzzle" => array("img" => "./puzzle.jpg",
+            "description" => "Puzzel",
+            "price" => "€50,00",),
         );
         
         foreach ($array as $element) {
@@ -74,7 +77,16 @@
             echo $item->getItem();
         }
 
-        echo '</div>'
+        echo '</div>';
+
+        // Manier om verbinding te maken met een database
+        // $dir = 'sqlite:database.sqlite';
+        // $dbh = new PDO($dir) or die("Cannot open database");
+        // $query = 'SELECT name from data WHERE age="16"';
+        // foreach ($dbh->query($query) as $row) {
+        //    echo $row[0];
+        // }
+        // $dbh = null;
     ?>
 </body>
 </html>
