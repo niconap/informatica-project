@@ -19,7 +19,7 @@
             <li><a href="./about.php">Over</a></li>
             <li><a href="#">More</a></li>
             </ul>
-            <img alt="Shopping cart" src="shoppingcart.svg" />
+            <img alt="Shopping cart" src="./images/shoppingcart.svg" />
         </nav>';
 
         # Zorgt voor het maken van de landing image
@@ -46,7 +46,7 @@
                         <img src="'. $this->itemimg .'" class="itemimg" />
                         <span class="itemdescription">'. $this->itemdescription .'</span>
                         <span class="itemprice">'. $this->itemprice .'</span>
-                        <a>Zie details</a>
+                        <a>In winkelmandje</a>
                     </div>';
             }
 
@@ -59,16 +59,16 @@
 
         # Deze array wordt vervangen door wat we uit de database halen
         $array = array(
-            "dancer" => array("img" => "./dancer.jpg",
+            "dancer" => array("img" => "./images/dancer.jpg",
             "description" => "Danser",
             "price" => "€50,00",),
-            "face" => array("img" => "./face.jpg",
+            "face" => array("img" => "./images/face.jpg",
             "description" => "Oranje-rood Hoofd",
             "price" => "€50,00",),
-            "purplehead" => array("img" => "./purplehead.jpg",
+            "purplehead" => array("img" => "./images/purplehead.jpg",
             "description" => "Paars Hoofd",
             "price" => "€50,00",),
-            "puzzle" => array("img" => "./puzzle.jpg",
+            "puzzle" => array("img" => "./images/puzzle.jpg",
             "description" => "Puzzel",
             "price" => "€50,00",),
         );

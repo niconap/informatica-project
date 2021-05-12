@@ -19,7 +19,7 @@
             <li><a href="#">Over</a></li>
             <li><a href="#">More</a></li>
             </ul>
-            <img alt="Shopping cart" src="shoppingcart.svg" />
+            <img alt="Shopping cart" src="./images/shoppingcart.svg" />
         </nav>';
 
         # Zorgt voor de informatie op de pagina
@@ -27,7 +27,7 @@
             <h2>OVER TIM</h2>
             <p id="description">Tim Smelik is al jaren prachtige kunstwerken aan het maken met een bijzonder <br> materiaal: epoxy. Hij giet prachtige vormen of buigt ze zo dat er een figuur te zien wordt. <br> Het mixen van materialen zoals een stuk hout erbij of stukken metaal is niks nieuws en <br> dit wordt vaak gedaan om een speciaal effect te geven aan het kunstwerk.</p>
         </div>
-        <img id="aboutimg" src="./redlamp.jpg">';
+        <img id="aboutimg" src="./images/redlamp.jpg">';
 
         # Zorgt voor het maken van de informatie bij contact
         echo '<div id="contact">
