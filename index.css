@@ -87,6 +87,10 @@
   margin-bottom: 15px;
 }
 
+#info {
+  padding: 2em;
+}
+
 .item a {
   border: none;
   background-color: #121212;
