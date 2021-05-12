@@ -31,12 +31,7 @@
   margin-right: 50px;
   margin-top: 5em;
   padding: 10px;
-  display: grid;
-  grid-template-areas: "info form";
-}
-  
-#info {
-  grid-area: info;
+  text-align: center;
 }
   
 #info a {
@@ -47,33 +42,4 @@
 
 #info a:hover {
   color: rgb(253, 170, 183);
-}
-
-form {
-  grid-area: form;
-  display: grid;
-  grid-template-areas: "name surname subject"
-                       "message message submit";
-}
-
-#name {
-  grid-area: name;
-}
-
-#surname {
-  grid-area: surname;
-}
-
-#subject {
-  grid-area: subject;
-}
-
-#message {
-  grid-area: message;
-  min-width: 100%;
-  max-width: 100%;
-}
-
-#submit {
-  grid-area: submit;
 }

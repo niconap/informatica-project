@@ -57,6 +57,7 @@
             }
         }
 
+        # Deze array wordt vervangen door wat we uit de database halen
         $array = array(
             "dancer" => array("img" => "./dancer.jpg",
             "description" => "Danser",

@@ -52,16 +52,6 @@
                 SUNDAY:   8am - 11pm
             </p>
         </div>';
-    
-        # Zorgt voor het contactformulier
-        echo '<form id="contactform">
-            <input id="name" name="name" placeholder="Voornaam" type="text">
-            <input id="surname" name="surname" placeholder="Achternaam" type="text">
-            <input id="subject" name="subject" placeholder="Onderwerp" type="text">
-            <textarea name="message" id="message" placeholder="Typ uw bericht"></textarea>
-            <button id="submit">Verstuur</button>
-        </form>
-        </div>';
     ?>
 </body>
 </html>
