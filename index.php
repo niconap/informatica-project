@@ -81,13 +81,13 @@
         echo '</div>';
 
         // Manier om verbinding te maken met een database
-        // $dir = 'sqlite:database.sqlite';
-        // $dbh = new PDO($dir) or die("Cannot open database");
-        // $query = 'SELECT name from data WHERE age="16"';
-        // foreach ($dbh->query($query) as $row) {
-        //    echo $row[0];
-        // }
-        // $dbh = null;
+        //$dir = 'sqlite:database.sqlite';
+        //$dbh = new PDO($dir) or die("Cannot open database");
+        //$query = 'SELECT * FROM "producten" WHERE productnummer = 1';
+        //foreach ($dbh->query($query) as $row) {
+        //   echo $row[1];
+        //}
+        //$dbh = null;
     ?>
 </body>
 </html>

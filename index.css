@@ -1,7 +1,7 @@
 #landingtext {
   margin-top: 100px;
   text-align: center;
-  background-image: url("home-achtergrond.jpg");
+  background-image: url('./images/home-achtergrond.jpg');
   background-position: center;
   background-size: cover;
   margin-left: 50px;
