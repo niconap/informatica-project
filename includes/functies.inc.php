@@ -142,6 +142,13 @@ function loginUser($db, $emailadres, $wachtwoord) {
 		session_start();
 		$_SESSION["klantnummer"] = $takenEmail["klantnummer"];
 		$_SESSION["voornaam"] = $takenEmail["voornaam"];
+		$_SESSION["achternaam"] = $takenEmail["achternaam"];
+		$_SESSION["email"] = $takenEmail["email"];
+		$_SESSION["telefoonnummer"] = $takenEmail["telefoonnummer"];
+		$_SESSION["woonplaats"] = $takenEmail["woonplaats"];
+		$_SESSION["postcode"] = $takenEmail["postcode"];
+		$_SESSION["straatnaam"] = $takenEmail["straatnaam"];
+		$_SESSION["huisnummer"] = $takenEmail["huisnummer"];
 
 		header("location: ../index.php");
 		exit;
