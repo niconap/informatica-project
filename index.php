@@ -10,17 +10,8 @@
 </head>
 <body>
     <?php 
-        # Zorgt voor het maken van de navigatie
-        echo '<nav>
-            <img id="logo" src="./images/logo.png">
-            <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#ourcollection">Shop</a></li>
-            <li><a href="./about.php">Over</a></li>
-            <li><a href="#">More</a></li>
-            </ul>
-            <img alt="Shopping cart" id="cart" src="./images/shoppingcart.svg" />
-        </nav>';
+        # Zorgt voor het oproepen van de navigatie
+        include_once "navigation.php";
 
         # Zorgt voor het maken van de landing image
         echo '<div id="landingtext">

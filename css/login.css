@@ -1,0 +1,31 @@
+#loginhok {
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 270px;
+    height: 250px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color:rgb(231, 231, 231);
+    border: 2px solid darkgray;
+}
+
+#logininhoud {
+    margin: 20px;
+}
+
+#login {
+    border: none;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.705);
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#login:hover{
+    background-color: rgba(194, 194, 194, 0.781);
+}
