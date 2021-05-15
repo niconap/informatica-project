@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Login</title>
-	<link href="./css/style.css" rel="stylesheet" type="text/css">
-	<link href="/css/login.css" rel="stylesheet" type="text/css">
+	<link href="./css/style.css?v=2" rel="stylesheet" type="text/css">
+	<link href="./css/login.css?v=3" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -30,6 +30,8 @@
 				Klik <a href="registratie.php">hier</a> als je nog geen account hebt
 			</form>
 		</div>
+		<br>
+		<p id="aanmaak">Klik <a href="registratie.php">hier</a> als je nog geen account hebt</p>
 	</div>
 </section>
 
