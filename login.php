@@ -14,7 +14,7 @@
 <section>
 	<div id="loginhok">
 		<div id="logininhoud">
-			<h1>Login</h1>
+			<h1>Log in</h1>
 			<form action="includes/login.inc.php" method="post">
 				<br>
 				<label>Vul uw emailadres in:</label>
@@ -26,13 +26,12 @@
 				<input type="password" name="wachtwoord" placeholder="Wachtwoord" required>
 				<br><br>
 				<button id="login" type="submit" name="login">Log in</button>
+				<br><br>
+				Klik <a href="registratie.php">hier</a> als je nog geen account hebt
 			</form>
 		</div>
 	</div>
 </section>
-
-<br>
-Klik <a href="registratie.php">hier</a> als je nog geen account hebt
 
 <?php
 	if (isset($_GET["error"])) {
