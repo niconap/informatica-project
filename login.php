@@ -30,8 +30,6 @@
 				Klik <a href="registratie.php">hier</a> als je nog geen account hebt
 			</form>
 		</div>
-		<br>
-		<p id="aanmaak">Klik <a href="registratie.php">hier</a> als je nog geen account hebt</p>
 	</div>
 </section>
 
