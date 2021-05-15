@@ -9,7 +9,7 @@ echo'<nav>
             <li><a href="./index.php">Home</a></li>
             <li><a href="./index.php#ourcollection">Shop</a></li>
             <li><a href="./about.php">Over</a></li>
-            <li><a href="#">More</a></li>
+            <li><a href="./login.php">Log in</a></li>
         </ul>
         <img alt="Shopping cart" id="cart" src="./images/shoppingcart.svg" />
     </nav>';
