@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Login</title>
-	<link href="./css/style.css" rel="stylesheet" type="text/css">
-	<link href="/css/login.css" rel="stylesheet" type="text/css">
+	<link href="./css/style.css?v=2" rel="stylesheet" type="text/css">
+	<link href="./css/login.css?v=3" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -28,11 +28,11 @@
 				<button id="login" type="submit" name="login">Log in</button>
 			</form>
 		</div>
+		<br>
+		<p id="aanmaak">Klik <a href="registratie.php">hier</a> als je nog geen account hebt</p>
 	</div>
 </section>
 
-<br>
-Klik <a href="registratie.php">hier</a> als je nog geen account hebt
 
 <?php
 	if (isset($_GET["error"])) {
