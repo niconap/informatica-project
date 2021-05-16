@@ -7,48 +7,22 @@ if (isset($_SESSION["klantnummer"])) {
     echo'<nav>
             <img id="logo" src="./images/logo.png">
             <ul>
-                <li><a href="./index.php">Home</a></li>
-                <li><a href="./index.php#ourcollection">Shop</a></li>
-                <li><a href="./about.php">Over</a></li>
-                <li><a href="./account.php">Account</a></li>
+                <li><a class="heading" href="./index.php">Home</a></li>
+                <li><a class="heading" href="./index.php#ourcollection">Shop</a></li>
+                <li><a class="heading" href="./about.php">Over</a></li>
+                <li><a class="heading" href="./account.php">Account</a></li>
             </ul>
-            <img alt="Shopping cart" id="cart" src="./images/shoppingcart.svg" />
+            <a href="./cart.php"><img alt="Shopping cart" id="cart" src="./images/shoppingcart.svg"></a>
         </nav>';
 } else {
     echo'<nav>
             <img id="logo" src="./images/logo.png">
             <ul>
-                <li><a href="./index.php">Home</a></li>
-                <li><a href="./index.php#ourcollection">Shop</a></li>
-                <li><a href="./about.php">Over</a></li>
-                <li><a href="./login.php">Log in</a></li>
+                <li><a class="heading" href="./index.php">Home</a></li>
+                <li><a class="heading" href="./index.php#ourcollection">Shop</a></li>
+                <li><a class="heading" href="./about.php">Over</a></li>
+                <li><a class="heading"  href="./login.php">Log in</a></li>
             </ul>
-            <img alt="Shopping cart" id="cart" src="./images/shoppingcart.svg" />
+            <a id="cartlink" href="./cart.php"><img alt="Shopping cart" id="cart" src="./images/shoppingcart.svg"></a>
         </nav>';
 }
-
-
-/* 
-ABOUT.PHP
-echo '<nav>
-            <img id="logo" src="./images/logo.png">
-            <ul>
-            <li><a href="./index.php">Home</a></li>
-            <li><a href="./index.php#ourcollection">Shop</a></li>
-            <li><a href="#">Over</a></li>
-            <li><a href="#">More</a></li>
-            </ul>
-            <img alt="Shopping cart" id="cart" src="./images/shoppingcart.svg" />
-        </nav>';
-INDEX.PHP
-echo '<nav>
-            <img id="logo" src="./images/logo.png">
-            <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#ourcollection">Shop</a></li>
-            <li><a href="./about.php">Over</a></li>
-            <li><a href="#">More</a></li>
-            </ul>
-            <img alt="Shopping cart" id="cart" src="./images/shoppingcart.svg" />
-        </nav>';
-*/

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Account</title>
+	<title>Tim's Art - Account</title>
 	<link href="./css/style.css" rel="stylesheet" type="text/css">
 	<link href="./css/account.css?v=2" rel="stylesheet" type="text/css">
 </head>
