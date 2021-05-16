@@ -77,7 +77,7 @@
 						} elseif ($_GET["error"] == "stmtfailed") {
 							echo "<p>Er is iets mis gegaan, probeer opnieuw!</p>";
 						} elseif ($_GET["error"] == "reken") {
-							echo "<p>Het antwoord op de vraag is fout, probeer opnieuw!</p>";
+							echo "<p>Het antwoord op de rekenvraag is fout, probeer opnieuw!</p>";
 						}
 						echo "</div><br>";
 					}
