@@ -29,3 +29,8 @@
 #login:hover {
   background-color: rgb(253, 170, 183);
 }
+
+#error {
+  color: red;
+  margin-top: 1px; /*de inputs werden raar weergeven bij een error en dit loste het op*/
+}

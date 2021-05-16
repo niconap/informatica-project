@@ -3,8 +3,8 @@
   position: absolute;
   top: 45%;
   left: 50%;
-  width: 430px;
-  height: 540px;
+  width: 450px;
+  height: 600px;
   -ms-transform: translate(-50%, -45%);
   transform: translate(-50%, -45%);
   background-color: rgb(231, 231, 231);
@@ -29,4 +29,8 @@
 
 #registreer:hover {
   background-color: rgb(253, 170, 183);
+}
+
+#error {
+  color: red;
 }

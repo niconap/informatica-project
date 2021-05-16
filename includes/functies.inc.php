@@ -87,11 +87,16 @@ function takenEmail($db, $emailadres) {
 	$stmt->close();
 }
 
-function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord) {
+function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord, $antwoord) {
+	If($antwoord !== 10) {
+		header("location: ../registratie.php?error=reken");
+		exit;
+	}
+	
 	//$sql = "INSERT INTO klanten (voornaam, achternaam, straatnaam, huisnummer, postcode, woonplaats, telefoonnummer, email, wachtwoord) VALUES (:voornaam, :achternaam, :straatnaam, :huisnummer, :postcode, :woonplaats, :telefoonnummer, :email, :wachtwoord);";
 	$sql = "INSERT INTO klanten (voornaam, achternaam, straatnaam, huisnummer, postcode, woonplaats, telefoonnummer, email, wachtwoord) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
-	if (!$stmt = $db->prepare($sql)) {
+	if(!$stmt = $db->prepare($sql)) {
 		header("location: ../registratie.php?error=stmtFailed");
 		exit;
 	}

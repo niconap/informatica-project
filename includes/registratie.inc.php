@@ -12,6 +12,7 @@ if (isset($_POST["registreer"])) {
 	$huisnummer = $_POST["huisnummer"];
 	$wachtwoord = $_POST["wachtwoord"];
 	$wachtwoordbevestiging = $_POST["wachtwoordbevestiging"];
+	$antwoord = $_POST["antwoord"];
 	
 	require_once "../core/dbconnectie.php";
 	require_once "functies.inc.php";
@@ -41,7 +42,7 @@ if (isset($_POST["registreer"])) {
 		exit;
 	}
 
-	createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord);
+	createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord, $antwoord);
 	
 } else {
 	header("location: ../registratie.php");
