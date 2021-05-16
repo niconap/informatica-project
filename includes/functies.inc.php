@@ -64,7 +64,8 @@ function takenEmail($db, $emailadres) {
 		exit;
 	}
 	
-	$stmt->bindParam(":email", $emailadres);
+	$emailzonderhoofdletters = strtolower($emailadres);
+	$stmt->bindParam(":email", $emailzonderhoofdletters);
 	//SQLite3Stmt::bindParam($stmt, $emailadres);
 	//sqlite3_stmt_bind_parameter_name($stmt, $emailadres);
 
@@ -96,6 +97,7 @@ function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $
 	}
 	
 	$encryptwachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT);
+	$emailzonderhoofdletters = strtolower($emailadres);
 
 	$stmt->bindParam(1, $voornaam);
 	$stmt->bindParam(2, $achternaam);
@@ -104,7 +106,7 @@ function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $
 	$stmt->bindParam(5, $postcode);
 	$stmt->bindParam(6, $woonplaats);
 	$stmt->bindParam(7, $telefoonnummer);
-	$stmt->bindParam(8, $emailadres);
+	$stmt->bindParam(8, $emailzonderhoofdletters);
 	$stmt->bindParam(9, $encryptwachtwoord);
 
 	$stmt->execute();
@@ -124,7 +126,8 @@ function emptyInputLogin($emailadres, $wachtwoord) {
 }
 
 function loginUser($db, $emailadres, $wachtwoord) {
-	$takenEmail = takenEmail($db, $emailadres);
+	$emailzonderhoofdletters = strtolower($emailadres);
+	$takenEmail = takenEmail($db, $emailzonderhoofdletters);
 	
 	if ($takenEmail === false) {
 		header("location: ../login.php?error=verkeerdeLogin");

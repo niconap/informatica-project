@@ -9,6 +9,10 @@
 
 <?php
 	include_once "navigation.php";
+
+	if (!isset($_SESSION["klantnummer"])) {
+		header("location: ../login.php");
+	}
 ?>
 
 <section>
