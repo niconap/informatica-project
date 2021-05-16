@@ -24,6 +24,10 @@ nav {
   z-index: 100;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 nav #logo {
   grid-area: title;
   margin-left: 25px;
