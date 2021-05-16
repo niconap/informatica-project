@@ -10,9 +10,7 @@
 
 		include_once "navigation.php";
 
-		if (isset($_SESSION["klantnummer"])) {
-			echo'';
-		} else {
+		if (!isset($_SESSION["klantnummer"])) {
 			header("location: ../login.php");
 		}
 
