@@ -88,7 +88,7 @@ function takenEmail($db, $emailadres) {
 }
 
 function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord, $antwoord) {
-	If($antwoord !== 10) {
+	If($antwoord != 10) {
 		header("location: ../registratie.php?error=reken");
 		exit;
 	}
@@ -103,12 +103,13 @@ function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $
 	
 	$encryptwachtwoord = password_hash($wachtwoord, PASSWORD_DEFAULT);
 	$emailzonderhoofdletters = strtolower($emailadres);
+	$postcodemethoofdletters = strtoupper($postcode);
 
 	$stmt->bindParam(1, $voornaam);
 	$stmt->bindParam(2, $achternaam);
 	$stmt->bindParam(3, $straatnaam);
 	$stmt->bindParam(4, $huisnummer);
-	$stmt->bindParam(5, $postcode);
+	$stmt->bindParam(5, $postcodemethoofdletters);
 	$stmt->bindParam(6, $woonplaats);
 	$stmt->bindParam(7, $telefoonnummer);
 	$stmt->bindParam(8, $emailzonderhoofdletters);

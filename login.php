@@ -42,7 +42,7 @@
 				?>
 				<button id="login" type="submit" name="login">Log in</button>
 				<br><br>
-				Klik <a href="registratie.php">hier</a> als je nog geen account hebt
+				Klik <a href="registratie.php">hier</a> als u nog geen account heeft
 			</form>
 		</div>
 	</div>
