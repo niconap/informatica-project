@@ -12,19 +12,6 @@
   padding: 5%;
 }
 
-#items {
-  grid-area: main;
-  border: 2px solid black;
-  padding: 10px;
-}
-
-.item {
-  border: 2px solid black;
-  width: 1200px;
-  height: 250px;
-  margin: 15px;
-}
-
 #afrekenen {
   grid-area: footer;
   text-align: right;
@@ -58,4 +45,37 @@
 
 #bestel:hover {
   background-color: rgb(253, 170, 183);
+}
+
+#items {
+  grid-area: main;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.item {
+  border: 2px solid black;
+  width: 1200px;
+  height: 250px;
+  margin: 15px;
+}
+
+.itemFoto {
+
+}
+
+.itemNaam {
+  
+}
+
+.itemPrijs {
+  
+}
+
+.itemBeschrijving {
+
+}
+
+.itemAantal {
+  
 }
