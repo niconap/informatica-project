@@ -32,11 +32,21 @@
 					
 					while($row = $resultaat->fetch(SQLITE3_NUM)) {
 						echo '<div class="item">
-								<img class="itemFoto" source=".images/'.$row["productafbeelding"].'">
-								<p class="itemNaam">'.$row["productnaam"].'</p>
-								<p class="itemBeschrijving">'.$row["productbeschrijving"].'</p>
-								<p class="itemPrijs">€'.$row["prijs"].'</p>
-								<p class="itemAantal"></p>
+								<div class="itemFoto">
+									<img class="Foto" source=".images/'.$row["productafbeelding"].'">
+								</div>
+								<div class="itemNaam">
+									<p class="Naam">'.$row["productnaam"].'</p>
+								</div>
+								<div class="itemBeschrijving">
+									<p class="Beschrijving">'.$row["productbeschrijving"].'</p>
+								</div>
+								<div class="itemPrijs">
+									<p class="Prijs">€'.$row["prijs"].'</p>
+								</div>
+								<div class="itemAantal">
+									<p class="Aantal"></p>
+								</div>
 							</div>';
 					}
 

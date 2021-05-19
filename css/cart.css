@@ -58,24 +58,49 @@
   width: 1200px;
   height: 250px;
   margin: 15px;
+  
+  display: grid;
+  grid-template-areas: 
+  'foto naam beschrijving beschrijving prijs'
+  'foto naam beschrijving beschrijving aantal';
 }
 
 .itemFoto {
-
+  grid-area: foto;
 }
 
 .itemNaam {
-  
+  grid-area: naam;
 }
 
 .itemPrijs {
-  
+  grid-area: prijs;
 }
 
 .itemBeschrijving {
-
+  grid-area: beschrijving;
 }
 
 .itemAantal {
+  grid-area: aantal;
+}
+
+.Foto {
+
+}
+
+.Naam {
+  
+}
+
+.Prijs {
+  
+}
+
+.Beschrijving {
+
+}
+
+.Aantal {
   
 }

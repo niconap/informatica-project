@@ -34,3 +34,13 @@
   color: red;
   margin-top: 1px; /*de inputs werden raar weergeven bij een error en dit loste het op*/
 }
+
+input {
+  border: 2px solid rgb(168, 168, 168);
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: white;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
