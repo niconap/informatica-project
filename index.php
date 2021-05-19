@@ -33,12 +33,20 @@
             public $itemprice;
 
             public function getItem() {
+                if (isset($_SESSION["klantnummer"])) {
                 echo '<div class="item">
                         <img src="'. $this->itemimg .'" class="itemimg" />
                         <span class="itemdescription">'. $this->itemdescription .'</span>
                         <span class="itemprice">'. $this->itemprice .'</span>
                         <a>In winkelmandje</a>
                     </div>';
+                } else {
+                    echo '<div class="item">
+                        <img src="'. $this->itemimg .'" class="itemimg" />
+                        <span class="itemdescription">'. $this->itemdescription .'</span>
+                        <span class="itemprice">'. $this->itemprice .'</span>
+                    </div>';
+                }
             }
 
             public function __construct($itemimg, $itemdescription, $itemprice) {
