@@ -99,3 +99,8 @@
   font-size: 15px;
   transition: background-color 0.2s ease;
 }
+
+#disabled {
+  background-color: #acacac;
+  cursor: not-allowed;
+}
