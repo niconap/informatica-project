@@ -12,6 +12,7 @@
 
 		if (!isset($_SESSION["klantnummer"])) {
 			header("location: ./login.php");
+			exit;
 		}
 
 		require_once "./includes/cart.inc.php";
