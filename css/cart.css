@@ -86,11 +86,12 @@
 }
 
 .Foto {
-
+  height: 10em;
+  width: 10em;
 }
 
 .Naam {
-  
+  font-size: 30px;
 }
 
 .Prijs {
