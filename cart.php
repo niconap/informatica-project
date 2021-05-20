@@ -31,9 +31,10 @@
 					echo '<div id="items">';
 					
 					while($row = $resultaat->fetch(SQLITE3_NUM)) {
+						
 						echo '<div class="item">
 								<div class="itemFoto">
-									<img class="Foto" source=".images/'.$row["productafbeelding"].'">
+									<img class="Foto" source="./images/'.$row["productafbeelding"].'">
 								</div>
 								<div class="itemNaam">
 									<p class="Naam">'.$row["productnaam"].'</p>
@@ -42,21 +43,12 @@
 									<p class="Beschrijving">'.$row["productbeschrijving"].'</p>
 								</div>
 								<div class="itemPrijs">
-									<p class="Prijs">€'.$row["prijs"].'</p>
+									<br><p class="Prijs">€'.$row["prijs"].'</p>
 								</div>
-								<div class="itemAantal">
-									<p class="Aantal"></p>
-								</div>
+								<button class="verwijder" type="submit" name="verwijder">Verwijder</button>
 							</div>';
 					}
 
-					/*
-					for($i = 1; $i <= $aantalitems, $i++) {
-						echo '<div class="item">
-
-							</div>';
-					}
-					*/
 					echo '</div>';
 				}	
 				
@@ -64,6 +56,16 @@
 			<div id="none"></div>
 			<div id="afrekenen">
 				<br><br>
+				
+				<?php
+				if($aantalItems > 0) {
+					while($row) {
+						echo $row["productnaam"].': &nbsp; €'.$row["prijs"];
+						echo '<br>';
+					}
+				}
+				?>
+				
 				Verzendkosten: &nbsp; €7,95
 				<hr>
 				€ <?php //echo '$totaalprijs';?>
