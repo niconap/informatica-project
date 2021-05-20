@@ -91,7 +91,7 @@
   padding: 2em;
 }
 
-.item a {
+.item #button a {
   border: none;
   background-color: #121212;
   color: white;
