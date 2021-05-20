@@ -37,7 +37,7 @@
 }
 
 #shopnow:hover,
-.item a:hover {
+#button:hover {
   background-color: rgb(253, 170, 183);
   cursor: pointer;
 }
@@ -91,7 +91,7 @@
   padding: 2em;
 }
 
-.item #button a {
+#button {
   border: none;
   background-color: #121212;
   color: white;
