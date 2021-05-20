@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="./css/index.css?v=5" rel="stylesheet" type="text/css">
-  <link href="./css/style.css?v=2" rel="stylesheet" type="text/css">
+  <link href="./css/index.css" rel="stylesheet" type="text/css">
+  <link href="./css/style.css" rel="stylesheet" type="text/css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tim's Art</title>
@@ -35,15 +35,19 @@
             public function getItem() {
                 if (isset($_SESSION["klantnummer"])) {
                 echo '<div class="item">
-                        <img src="'. $this->itemimg .'" class="itemimg" />
-                        <span class="itemdescription">'. $this->itemdescription .'</span>
+                        <a href="product.php?product='.$this->itemdescription.'">
+                            <img src="'. $this->itemimg .'" class="itemimg" />
+                            <span class="itemdescription">'. $this->itemdescription .'</span>
+                        </a>
                         <span class="itemprice">'. $this->itemprice .'</span>
-                        <a>In winkelmandje</a>
+                        <a id="button">In winkelmandje</a>
                     </div>';
                 } else {
                     echo '<div class="item">
-                        <img src="'. $this->itemimg .'" class="itemimg" />
-                        <span class="itemdescription">'. $this->itemdescription .'</span>
+                        <a href="product.php?product='.$this->itemdescription.'">
+                            <img src="'. $this->itemimg .'" class="itemimg" />
+                            <span class="itemdescription">'. $this->itemdescription .'</span>
+                        </a>
                         <span class="itemprice">'. $this->itemprice .'</span>
                         <a id="disabled">Maak een account aan of log in</a>
                     </div>';
@@ -59,16 +63,16 @@
 
         # Deze array wordt vervangen door wat we uit de database halen
         $array = array(
-            "dancer" => array("img" => "./images/dancer.jpg",
+            "danser" => array("img" => "./images/danser.jpg",
             "description" => "Danser",
             "price" => "€50,00",),
-            "face" => array("img" => "./images/face.jpg",
+            "gezicht" => array("img" => "./images/Oranje-rood hoofd.jpg",
             "description" => "Oranje-rood Hoofd",
             "price" => "€50,00",),
-            "purplehead" => array("img" => "./images/purplehead.jpg",
+            "purplehead" => array("img" => "./images/Paars Hoofd.jpg",
             "description" => "Paars Hoofd",
             "price" => "€50,00",),
-            "puzzle" => array("img" => "./images/puzzle.jpg",
+            "puzzle" => array("img" => "./images/Puzzel.jpg",
             "description" => "Puzzel",
             "price" => "€50,00",),
         );

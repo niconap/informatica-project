@@ -37,7 +37,7 @@
 }
 
 #shopnow:hover,
-.item a:hover {
+#button:hover {
   background-color: rgb(253, 170, 183);
   cursor: pointer;
 }
@@ -78,6 +78,8 @@
 .itemdescription {
   margin-top: 15px;
   display: block;
+  color: black;
+  text-decoration: none;
 }
 
 .itemprice {
@@ -91,7 +93,7 @@
   padding: 2em;
 }
 
-.item a {
+#button {
   border: none;
   background-color: #121212;
   color: white;
@@ -102,5 +104,9 @@
 
 #disabled {
   background-color: #acacac;
+  border: none;
+  color: white;
+  padding: 10px 55px 10px 55px;
+  font-size: 15px;
   cursor: not-allowed;
 }

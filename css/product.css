@@ -1,0 +1,30 @@
+#content {
+  margin-top: 7em;
+}
+
+img {
+  width: 15em;
+}
+
+#content {
+  text-align: center;
+}
+
+#content a {
+  border: none;
+  background-color: #121212;
+  color: white;
+  padding: 10px 55px 10px 55px;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
+#content a:hover {
+  background-color: rgb(253, 170, 183);
+  cursor: pointer;
+}
+
+#beschrijving {
+  font-size: small;
+  color: rgb(160, 160, 160);
+}
