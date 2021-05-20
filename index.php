@@ -37,15 +37,17 @@
                 echo '<div class="item">
                         <a href="product.php?product='.$this->itemdescription.'">
                             <img src="'. $this->itemimg .'" class="itemimg" />
+                            <span class="itemdescription">'. $this->itemdescription .'</span>
                         </a>
-                        <span class="itemdescription">'. $this->itemdescription .'</span>
                         <span class="itemprice">'. $this->itemprice .'</span>
                         <a id="button">In winkelmandje</a>
                     </div>';
                 } else {
                     echo '<div class="item">
-                        <img src="'. $this->itemimg .'" class="itemimg" />
-                        <span class="itemdescription">'. $this->itemdescription .'</span>
+                        <a href="product.php?product='.$this->itemdescription.'">
+                            <img src="'. $this->itemimg .'" class="itemimg" />
+                            <span class="itemdescription">'. $this->itemdescription .'</span>
+                        </a>
                         <span class="itemprice">'. $this->itemprice .'</span>
                         <a id="disabled">Maak een account aan of log in</a>
                     </div>';

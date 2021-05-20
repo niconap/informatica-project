@@ -78,6 +78,8 @@
 .itemdescription {
   margin-top: 15px;
   display: block;
+  color: black;
+  text-decoration: none;
 }
 
 .itemprice {
@@ -102,5 +104,9 @@
 
 #disabled {
   background-color: #acacac;
+  border: none;
+  color: white;
+  padding: 10px 55px 10px 55px;
+  font-size: 15px;
   cursor: not-allowed;
 }
