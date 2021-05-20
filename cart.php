@@ -29,15 +29,20 @@
 					echo 'Er zitten geen items in uw winkelwagen';
 				} else {
 					echo '<div id="items">';
-					
+					$oneTime = false;
+					$totaalprijs = 7.95;
+
 					while($row = $resultaat->fetch(SQLITE3_NUM)) {
+						
+						$productnaam = $row["productnaam"];
+						$prijs = $row["prijs"];
 						
 						echo '<div class="item">
 								<div class="itemFoto">
 									<img class="Foto" source="./images/'.$row["productafbeelding"].'">
 								</div>
 								<div class="itemNaam">
-									<p class="Naam">'.$row["productnaam"].'</p>
+									<p class="Naam">'.$productnaam.'</p>
 								</div>
 								<div class="itemBeschrijving">
 									<p class="Beschrijving">'.$row["productbeschrijving"].'</p>
@@ -47,31 +52,34 @@
 								</div>
 								<button class="verwijder" type="submit" name="verwijder">Verwijder</button>
 							</div>';
-					}
 
-					echo '</div>';
+						if($oneTime === false) {
+							echo '</div>';
+							
+							echo '<div id="none"></div>
+							<div id="afrekenen">
+								<br><br>';
+
+							$oneTime = true;
+						}
+				
+						echo $productnaam.': &nbsp; €'.$prijs;
+						echo '<br>';
+
+						$totaalprijs = $totaalprijs + $prijs;
+					}
 				}	
 				
+				$totaalprijs = str_replace('.', ',', $totaalprijs);
+			
+				echo 'Verzendkosten: &nbsp; €7,95
+					<hr>
+					€'.$totaalprijs.'
+					<br><br>
+					<button id="bestel" type="submit" name="bestel">Bestel</button>
+				</div>';
+
 			?>
-			<div id="none"></div>
-			<div id="afrekenen">
-				<br><br>
-				
-				<?php
-				if($aantalItems > 0) {
-					while($row) {
-						echo $row["productnaam"].': &nbsp; €'.$row["prijs"];
-						echo '<br>';
-					}
-				}
-				?>
-				
-				Verzendkosten: &nbsp; €7,95
-				<hr>
-				€ <?php //echo '$totaalprijs';?>
-				<br><br>
-				<button id="bestel" type="submit" name="bestel">Bestel</button>
-			</div>
 		</div>
     </div>
 </body>
