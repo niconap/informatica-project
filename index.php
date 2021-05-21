@@ -12,6 +12,8 @@
     <?php 
         # Zorgt voor het oproepen van de navigatie
         include_once "navigation.php";
+        require_once "./core/dbconnectie.php";
+        require_once "./includes/index.inc.php";
 
         # Zorgt voor het maken van de landing image
         echo '<div id="landingtext">
@@ -40,7 +42,7 @@
                             <span class="itemdescription">'. $this->itemdescription .'</span>
                         </a>
                         <span class="itemprice">'. $this->itemprice .'</span>
-                        <a id="button">In winkelmandje</a>
+                        <form method="POST"><a type="submit" id="button" name="'/*.$thist->itemid.*/.'">In winkelmandje</a></form>
                     </div>';
                 } else {
                     echo '<div class="item">
@@ -61,8 +63,9 @@
             }
         }
 
+
         # Deze array wordt vervangen door wat we uit de database halen
-        $array = array(
+        /*$array = array(
             "danser" => array("img" => "./images/danser.jpg",
             "description" => "Danser",
             "price" => "€50,00",),
@@ -80,6 +83,32 @@
         foreach ($array as $element) {
             $item = new Shopitem($element["img"], $element["description"], $element["price"]);
             echo $item->getItem();
+        }*/
+
+        # De vervangende manier voor de database
+        while($row = $resultaat->fetch(SQLITE3_NUM)) {
+            $productnummer = $row["productnaam"];
+            $productnaam = $row["productnaam"];
+			$prijs = $row["prijs"];
+            $productafbeelding = $row["productafbeelding"];
+            $productbeschrijving = $row["productbeschrijving"];
+            
+            $array = array(
+                $productnaam => array(
+                "img" => "./images/'.$productafbeelding.'",
+                "description" => "$productbeschrijving",
+                "price" => "'.$prijs.'",)
+            );
+
+            foreach($array as $element) {
+                $item = new Shopitem($element["img"], $element["description"], $element["price"]);
+                echo $item->getItem();
+            }
+        }
+
+        $klantnummer = $_SESSION["klantnummer"];
+        if(isset($_POST["productnummer"])) {
+            addCart($db, $klantnummer, $productnummer);
         }
 
         echo '</div>';
