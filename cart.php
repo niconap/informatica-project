@@ -39,7 +39,7 @@
 						
 						echo '<div class="item">
 								<div class="itemFoto">
-									<img class="Foto" source="./images/'.$row["productafbeelding"].'">
+									<img class="Foto" src="./images/'.$row["productafbeelding"].'">
 								</div>
 								<div class="itemNaam">
 									<p class="Naam">'.$productnaam.'</p>
