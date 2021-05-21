@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="./css/index.css" rel="stylesheet" type="text/css">
+  <link href="./css/index.css?v=4" rel="stylesheet" type="text/css">
   <link href="./css/style.css" rel="stylesheet" type="text/css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +42,7 @@
                             <span class="itemdescription">'. $this->itemdescription .'</span>
                         </a>
                         <span class="itemprice">'. $this->itemprice .'</span>
-                        <form method="POST"><a type="submit" id="button" name="'/*.$thist->itemid.*/.'">In winkelmandje</a></form>
+                        <form method="POST"><a type="submit" id="button" name="'/*.$this->itemid.*/.'">In winkelmandje</a></form>
                     </div>';
                 } else {
                     echo '<div class="item">
@@ -51,7 +51,14 @@
                             <span class="itemdescription">'. $this->itemdescription .'</span>
                         </a>
                         <span class="itemprice">'. $this->itemprice .'</span>
-                        <a id="disabled">Maak een account aan of log in</a>
+                        <span id="disabled">
+									<a href="./registratie.php">
+										Maak een account aan
+									</a> of 
+									<a href="login.php">
+										log in
+									</a>
+								</span>
                     </div>';
                 }
             }

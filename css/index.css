@@ -108,5 +108,13 @@
   color: white;
   padding: 10px 55px 10px 55px;
   font-size: 15px;
-  cursor: not-allowed;
+}
+
+#disabled a {
+  color: white;
+  text-decoration: none;
+}
+
+#disabled a:hover {
+  color: rgb(253, 170, 183);
 }
