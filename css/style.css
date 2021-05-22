@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: auto;
@@ -15,22 +15,17 @@ body {
 nav {
   background-color: rgb(241, 240, 240);
   position: fixed;
-  min-height: 50px;
+  min-height: 1em;
   display: grid;
   width: 100%;
-  grid-template-areas: "title navigation shopping";
-  padding: 25px;
-  top: 0px;
+  grid-template-areas: 'title navigation shopping';
+  padding: 1em;
+  top: 0;
   z-index: 100;
-}
-
-html {
-  overflow-y: scroll;
 }
 
 nav #logo {
   grid-area: title;
-  margin-left: 25px;
   width: 2.5em;
   height: 2.5em;
 }
@@ -41,13 +36,11 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: 0px 2.5em;
 }
 
 nav #cart {
   grid-area: shopping;
-  margin-left: 120px;
   height: 2.5em;
   width: 2.5em;
 }
