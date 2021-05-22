@@ -11,6 +11,8 @@
 		?>
 		<div id="content">
 			<?php
+				# Uiteindelijk moet alle informatie hier uit de database gehaald worden
+
 				$product = $_GET['product'];
 				echo "<img src=\"images/". $product .".jpg\">
 				<h2>".$product."</h2>
