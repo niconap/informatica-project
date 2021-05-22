@@ -43,7 +43,7 @@
                             <span class="itemdescription">'.$this->itemdescription.'</span>
                         </a>
                         <span class="itemprice">'.$this->itemprice.'</span>
-                        <form method="POST"><a type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a></form>
+                        <form action="index.php" method="POST"><a type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a></form>
                     </div>';
                 } else {
                     echo '<div class="item">
@@ -116,9 +116,10 @@
             }
         }
 
+        #dit deel werkt nog niet goed
         $klantnummer = $_SESSION["klantnummer"];
-        if(isset($_POST["productnummer"])) {
-            addCart($db, $klantnummer, $productnummer);
+        if(isset($_POST["$itemid"])) {
+            addCart($db, $klantnummer, $itemid);
         }
 
         echo '</div>';

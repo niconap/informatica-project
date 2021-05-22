@@ -21,6 +21,6 @@ function addCart($db, $klantnummer, $productnummer) {
 	$stmt->execute();
 	$stmt=null;
 
-	header("location: ../login.php");
+	header("location: ../index.php?toegevoegd");
 	exit;
 }
