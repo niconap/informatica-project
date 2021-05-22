@@ -45,3 +45,9 @@ img {
 #disabled a:hover {
   color: rgb(253, 170, 183);
 }
+
+@media screen and (max-width: 900px) {
+  #disabled a {
+    text-decoration: underline;
+  }
+}

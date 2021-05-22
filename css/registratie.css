@@ -45,3 +45,17 @@ input {
   padding-bottom: 7px;
   width: 170px;
 }
+
+@media screen and (max-width: 900px) {
+  #registratiehok {
+    position: static;
+    width: 15em;
+    margin: 30em 0em 0em 11.4em;
+    height: auto;
+  }
+
+  section {
+    text-align: center;
+    height: 50em;
+  }
+}
