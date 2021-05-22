@@ -33,16 +33,17 @@
             public $itemimg;
             public $itemdescription;
             public $itemprice;
+            public $itemid;
 
             public function getItem() {
                 if (isset($_SESSION["klantnummer"])) {
                 echo '<div class="item">
                         <a href="product.php?product='.$this->itemdescription.'">
-                            <img src="'. $this->itemimg .'" class="itemimg" />
-                            <span class="itemdescription">'. $this->itemdescription .'</span>
+                            <img src="'.$this->itemimg.'" class="itemimg" />
+                            <span class="itemdescription">'.$this->itemdescription.'</span>
                         </a>
-                        <span class="itemprice">'. $this->itemprice .'</span>
-                        <form method="POST"><a type="submit" id="button" name="'/*.$this->itemid.*/.'">In winkelmandje</a></form>
+                        <span class="itemprice">'.$this->itemprice.'</span>
+                        <form method="POST"><a type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a></form>
                     </div>';
                 } else {
                     echo '<div class="item">
@@ -63,10 +64,11 @@
                 }
             }
 
-            public function __construct($itemimg, $itemdescription, $itemprice) {
+            public function __construct($itemimg, $itemdescription, $itemprice, $itemid) {
                 $this->itemimg = $itemimg;
                 $this->itemdescription = $itemdescription;
                 $this->itemprice = $itemprice;
+                $this->itemid = $itemid;
             }
         }
 
@@ -94,21 +96,22 @@
 
         # De vervangende manier voor de database
         while($row = $resultaat->fetch(SQLITE3_NUM)) {
-            $productnummer = $row["productnaam"];
+            $itemid = $row["productnummer"];
             $productnaam = $row["productnaam"];
 			$prijs = $row["prijs"];
             $productafbeelding = $row["productafbeelding"];
             $productbeschrijving = $row["productbeschrijving"];
-            
+
             $array = array(
                 $productnaam => array(
                 "img" => "./images/$productafbeelding",
                 "description" => "$productbeschrijving",
-                "price" => "$prijs",)
+                "price" => "$prijs",
+                "id" => "$itemid")
             );
 
             foreach($array as $element) {
-                $item = new Shopitem($element["img"], $element["description"], $element["price"]);
+                $item = new Shopitem($element["img"], $element["description"], $element["price"], $element["id"]);
                 echo $item->getItem();
             }
         }
