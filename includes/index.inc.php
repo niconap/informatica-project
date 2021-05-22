@@ -1,11 +1,7 @@
 <?php
-if (!isset($_SESSION["klantnummer"])) {
-	header("location: ../index.php");
-}
-
 require_once "./core/dbconnectie.php";
 
-$sql = 'SELECT * FROM winkelwagen, producten WHERE winkelwagen.productnummer=producten.productnummer AND klantnummer='.$_SESSION["klantnummer"];
+$sql = 'SELECT * FROM producten';
 
 $resultaat = $db->query($sql);
 
