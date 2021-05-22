@@ -37,3 +37,44 @@
 #info a:hover {
   color: rgb(253, 170, 183);
 }
+
+@media screen and (max-width: 1400px) {
+  #aboutcontent {
+    margin: 9em 0em 3em 0em;
+  }
+
+  #contact {
+    margin: 3em 0em 0em 0em;
+  }
+
+  #aboutimg {
+    width: 60%;
+    margin-top: -15em;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  #description {
+    width: 25em;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #description {
+    width: 20em;
+  }
+
+  #aboutimg {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #description {
+    width: 15em;
+  }
+
+  #aboutimg {
+    margin-top: -10em;
+  }
+}

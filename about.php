@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="./css/style.css" rel="stylesheet" type="text/css">
-  <link href="./css/about.css" rel="stylesheet" type="text/css">
+  <link href="./css/style.css?v=20" rel="stylesheet" type="text/css">
+  <link href="./css/about.css?v=20" rel="stylesheet" type="text/css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tim's Art - Over</title>
