@@ -1,9 +1,6 @@
-
 #aboutcontent {
-  margin-top: 9em;
   background-color: white;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: 9em 5em 0em 5em;
   text-align: center;
   min-height: 30em;
 }
@@ -15,25 +12,22 @@
 
 #description {
   margin-bottom: 3%;
+  width: 40em;
 }
 
 #aboutimg {
   width: 40%;
   margin-top: -10em;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
 }
 
 #contact {
   background-color: white;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 5em;
-  padding: 10px;
+  margin: 5em 5em 0em 5em;
+  padding: 2em;
   text-align: center;
 }
-  
+
 #info a {
   color: #121212;
   text-decoration: none;
