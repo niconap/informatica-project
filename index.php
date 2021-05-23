@@ -48,7 +48,7 @@
                     </div>';
                 } else {
                     echo '<div class="item">
-                        <a href="product.php?product='.$this->itemname.'">
+                        <a href="product.php?productnummer='.$this->itemid.'">
                             <img src="'. $this->itemimg .'" class="itemimg" />
                             <br><br>
                             <span class="itemname">'. $this->itemname .'</span>
