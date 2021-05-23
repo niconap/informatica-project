@@ -12,8 +12,8 @@
     <?php 
         # Zorgt voor het oproepen van de navigatie
         include_once "navigation.php";
-        require_once "./core/dbconnectie.php";
-        require_once "./includes/index.inc.php";
+        include_once "./core/dbconnectie.php";
+        include_once "./includes/index.inc.php";
 
         # Zorgt voor het maken van de landing image
         echo '<div id="landingtext">
@@ -38,7 +38,7 @@
             public function getItem() {
                 if (isset($_SESSION["klantnummer"])) {
                 echo '<div class="item">
-                        <a href="product.php?product='.$this->itemname.'">
+                        <a href="product.php?productnummer='.$this->itemid.'">
                             <img src="'.$this->itemimg.'" class="itemimg" />
                             <br><br>
                             <span class="itemname">'.$this->itemname.'</span>

@@ -9,31 +9,41 @@
 	<body>
 		<?php 
 			include_once "navigation.php";
+			include_once "./core/dbconnectie.php";
 		?>
 		<div id="content">
 			<?php
-				# Uiteindelijk moet alle informatie hier uit de database gehaald worden
+				if(!$_GET['productnummer']){
+					header("location: index.php");
+				}
 
-				$product = $_GET['product'];
-				echo "<img src=\"images/". $product .".jpg\">
-				<h2>".$product."</h2>
-				<p>Prijs: onbekend</p>
-				<br>";
+				$productnummer = substr($_GET['productnummer'], strrpos($_GET['productnummer'], 'r') + 1, 1);
+
+				$sql = 'SELECT * FROM producten WHERE productnummer'.$productnummer;
+				$resultaat = $db->query($sql);
+				$row = $resultaat->fetch(SQLITE3_NUM);
+
+				echo '<img src="./images/'.$row["productafbeelding"].'">
+				<h2>'.$row["productnaam"].'</h2>
+				<p>Prijs: '.$row["prijs"].'</p>
+				<br>';
+
 				if (isset($_SESSION["klantnummer"])) {
 					echo "<a id=\"button\">In winkelmandje</a>";
 				} else {
 					echo "<span id=\"disabled\">
-									<a href=\"./registratie.php\">
-										Maak een account aan
-									</a> of 
-									<a href=\"login.php\">
-										log in
-									</a>
-								</span>";
+							<a href=\"./registratie.php\">
+								Maak een account aan
+							</a> of 
+							<a href=\"login.php\">
+								log in
+							</a>
+							</span>";
 				}
 				echo "<br>
 				<br>
 				<p id=\"beschrijving\">Hier kan een beschrijving</p>";
+				
 			?>
 		</div>
 	</body>
