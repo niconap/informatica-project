@@ -13,10 +13,22 @@ $aantalItems = $resultaatAantal->fetch(SQLITE3_NUM);
 
 $resultaat = $db->query($sql);
 
-/*
-if($aantalItems > 0) {
-	while($row = $resultaat->fetch(SQLITE3_NUM)) {
-		//hier verder gaan
+
+#verwijderen uit winkelwagen
+function removeCart($db, $klantnummer, $productnummer) {
+	$sqlverwijderen = "DELETE FROM winkelwagen WHERE klantnummer=:klantnummer AND productnummer=:productnummer";
+
+	if(!$stmt = $db->prepare($sqlverwijderen)) {
+		header("location: ../index.php");
+		exit;
 	}
+
+	$stmt->bindParam(':klantnummer', $klantnummer);
+	$stmt->bindParam(':productnummer', $productnummer);
+
+	$stmt->execute();
+	$stmt=null;
+
+	header("location: ../cart.php?verwijderd");
+	exit;
 }
-*/
