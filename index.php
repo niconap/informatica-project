@@ -31,27 +31,29 @@
         echo '<div id="shop">';
         class Shopitem{
             public $itemimg;
-            public $itemdescription;
+            public $itemname;
             public $itemprice;
             public $itemid;
 
             public function getItem() {
                 if (isset($_SESSION["klantnummer"])) {
                 echo '<div class="item">
-                        <a href="product.php?product='.$this->itemdescription.'">
+                        <a href="product.php?product='.$this->itemname.'">
                             <img src="'.$this->itemimg.'" class="itemimg" />
-                            <span class="itemdescription">'.$this->itemdescription.'</span>
+                            <br><br>
+                            <span class="itemname">'.$this->itemname.'</span>
                         </a>
-                        <span class="itemprice">'.$this->itemprice.'</span>
+                        <span class="itemprice">€'.$this->itemprice.'</span>
                         <form method="POST"><button type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a></form>
                     </div>';
                 } else {
                     echo '<div class="item">
-                        <a href="product.php?product='.$this->itemdescription.'">
+                        <a href="product.php?product='.$this->itemname.'">
                             <img src="'. $this->itemimg .'" class="itemimg" />
-                            <span class="itemdescription">'. $this->itemdescription .'</span>
+                            <br><br>
+                            <span class="itemname">'. $this->itemname .'</span>
                         </a>
-                        <span class="itemprice">'. $this->itemprice .'</span>
+                        <span class="itemprice">€'. $this->itemprice .'</span>
                         <span id="disabled">
 									<a href="./registratie.php">
 										Maak een account aan
@@ -64,9 +66,9 @@
                 }
             }
 
-            public function __construct($itemimg, $itemdescription, $itemprice, $itemid) {
+            public function __construct($itemimg, $itemname, $itemprice, $itemid) {
                 $this->itemimg = $itemimg;
-                $this->itemdescription = $itemdescription;
+                $this->itemname = $itemname;
                 $this->itemprice = $itemprice;
                 $this->itemid = $itemid;
             }
@@ -96,7 +98,7 @@
 
         # De vervangende manier voor de database
         while($row = $resultaat->fetch(SQLITE3_NUM)) {
-            $itemid = $row["productnummer"];
+            $productnummer = $row["productnummer"];
             $productnaam = $row["productnaam"];
 			$prijs = $row["prijs"];
             $productafbeelding = $row["productafbeelding"];
@@ -105,13 +107,13 @@
             $array = array(
                 $productnaam => array(
                 "img" => "./images/$productafbeelding",
-                "description" => "$productbeschrijving",
+                "name" => "$productnaam",
                 "price" => "$prijs",
-                "id" => "$itemid")
+                "id" => "$productnummer")
             );
 
             foreach($array as $element) {
-                $item = new Shopitem($element["img"], $element["description"], $element["price"], $element["id"]);
+                $item = new Shopitem($element["img"], $element["name"], $element["price"], $element["id"]);
                 echo $item->getItem();
             }
         }
