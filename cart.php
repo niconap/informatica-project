@@ -49,7 +49,7 @@
 										<br><p class="Prijs">€'.$row["prijs"].'</p>
 									</div>
 									<form method="GET">
-										<input id="invisbleInput" type="productnummer" placeholder="productnummer" name="productnummer" />
+										<input class="invisbleInput" type="productnummer" placeholder="productnummer" name="productnummer">
 										<button class="verwijder" type="submit" name="'.$row["productnummer"].'">Verwijder</button>
 									</form>
 								</div>';

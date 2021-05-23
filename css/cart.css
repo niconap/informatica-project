@@ -117,7 +117,7 @@
   background-color: rgb(253, 170, 183);
 }
 
-#invisbleInput {
+.invisbleInput {
   border: 0px solid white;
   width: 0px;
   height: 0px;

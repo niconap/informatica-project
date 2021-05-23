@@ -44,7 +44,10 @@
                             <span class="itemname">'.$this->itemname.'</span>
                         </a>
                         <span class="itemprice">€'.$this->itemprice.'</span>
-                        <form method="POST"><button type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a></form>
+                        <form method="GET">
+                            <input class="invisbleInput" type="productnummer" placeholder="productnummer" name="productnummer">
+                            <button type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a>
+                        </form>
                     </div>';
                 } else {
                     echo '<div class="item">
@@ -117,14 +120,18 @@
                 echo $item->getItem();
             }
         }
+        
 
-        #dit deel werkt nog niet goed
-        $klantnummer = $_SESSION["klantnummer"];
-        if(isset($_POST["$itemid"])) {
-            addCart($db, $klantnummer, $itemid);
-        }
+        #registreert of iemand de "In winkelmandje" knop indrukt
+		if (isset($_GET["productnummer"])) {
+			$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+						
+			#haalt het productnummer uit de url
+			$productnummer = substr($url, strrpos($url, '&') + 1, 1);				
+		    $klantnummer = $_SESSION["klantnummer"];
 
-        echo '</div>';
+		    addCart($db, $klantnummer, $productnummer);
+		}
     ?>
 </body>
 </html>
