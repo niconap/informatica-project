@@ -43,7 +43,7 @@
                             <span class="itemdescription">'.$this->itemdescription.'</span>
                         </a>
                         <span class="itemprice">'.$this->itemprice.'</span>
-                        <form action="index.php" method="POST"><a type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a></form>
+                        <form action="index.php" method="POST"><button type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a></form>
                     </div>';
                 } else {
                     echo '<div class="item">
