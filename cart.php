@@ -25,10 +25,10 @@
 					<p></p>
 			<div id="grid">
 				<?php
-					
-					if($aantalItems == 0) {
+				
+					if($aantalItems <= 0) {
 						echo 'Er zitten geen items in uw winkelwagen';
-					} else {
+					} elseif ($aantalItems >= 1) {
 						echo '<div id="items">';
 						$oneTime = false;
 						$totaalprijs = 7.95;
@@ -49,7 +49,7 @@
 										<br><p class="Prijs">€'.$row["prijs"].'</p>
 									</div>
 									<form method="GET">
-										<input type="productnummer" placeholder="productnummer" name="productnummer" />
+										<input id="invisbleInput" type="productnummer" placeholder="productnummer" name="productnummer" />
 										<button class="verwijder" type="submit" name="'.$row["productnummer"].'">Verwijder</button>
 									</form>
 								</div>';
@@ -58,22 +58,22 @@
 							$prijs = $row["prijs"];
 							$totaalprijs = $totaalprijs + $prijs;
 						}
-					}	
-					
-					echo '</div>';
-
-					echo '<div id="none"></div>
+						echo '</div>';
+						echo '<div id="none"></div>
 							<div id="afrekenen">
 							<br><br>';
 
-					$totaalprijs = str_replace('.', ',', $totaalprijs);
+						$totaalprijs = str_replace('.', ',', $totaalprijs);
+					
+						echo 'Verzendkosten: &nbsp; €7,95
+							<hr>
+							€'.$totaalprijs.'
+							<br><br>
+							<button id="bestel" type="submit" name="bestel">Bestel</button>
+						</div>';
+					}	
+					
 				
-					echo 'Verzendkosten: &nbsp; €7,95
-						<hr>
-						€'.$totaalprijs.'
-						<br><br>
-						<button id="bestel" type="submit" name="bestel">Bestel</button>
-					</div>';
 					
 					#registreert of iemand de verwijder knop indrukt
 					if (isset($_GET["productnummer"])) {
