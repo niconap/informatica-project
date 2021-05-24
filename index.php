@@ -127,7 +127,7 @@
 			$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 						
 			#haalt het productnummer uit de url
-			$productnummer = substr($url, strrpos($url, '&') + 1, 1);				
+			$productnummer = substr($url, strrpos($url, '&') + 1, 1);		
 		    $klantnummer = $_SESSION["klantnummer"];
 
 		    addCart($db, $klantnummer, $productnummer);
