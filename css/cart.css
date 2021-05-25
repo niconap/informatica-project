@@ -61,8 +61,9 @@
   
   display: grid;
   grid-template-areas: 
-  'foto naam none prijs prijs'
-  'foto beschrijving beschrijving verwijder verwijder';
+  'foto naam none prijs '
+  'foto beschrijving beschrijving verwijder';
+  grid-template-columns: 200px 200px 500px 300px;
 }
 
 
@@ -72,6 +73,8 @@
 
 .itemNaam {
   grid-area: naam;
+  margin-top: 3em;
+  margin-left: 3em;
 }
 
 .itemPrijs {
@@ -80,12 +83,14 @@
 
 .itemBeschrijving {
   grid-area: beschrijving;
+  margin-top: 0px;
+  margin-left: 3em;
 }
 
 
 .Foto {
-  height: 10em;
-  width: 10em;
+  max-height: 10em;
+  max-width: 10em;
 }
 
 .Naam {

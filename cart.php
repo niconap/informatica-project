@@ -21,8 +21,7 @@
 		?>
 
 		<div id="cartcontent">
-					<h2>WINKELWAGEN</h2>
-					<p></p>
+			<h2>WINKELWAGEN</h2>
 			<div id="grid">
 				<?php
 				
@@ -42,6 +41,7 @@
 									<div class="itemNaam">
 										<p class="Naam">'.$row["productnaam"].'</p>
 									</div>
+									<div id="none"></div>
 									<div class="itemBeschrijving">
 										<p class="Beschrijving">'.$row["productbeschrijving"].'</p>
 									</div>
@@ -59,8 +59,7 @@
 							$totaalprijs = $totaalprijs + $prijs;
 						}
 						echo '</div>';
-						echo '<div id="none"></div>
-							<div id="afrekenen">
+						echo '<div id="afrekenen">
 							<br><br>';
 
 						$totaalprijs = str_replace('.', ',', $totaalprijs);
@@ -89,6 +88,6 @@
 
 				?>
 			</div>
-			</div>
+		</div>
 	</body>
 </html>
