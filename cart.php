@@ -8,16 +8,14 @@
 	</head>
 	<body>
 		<?php
-
-			require_once "navigation.php";
+			include_once "navigation.php";
 
 			if (!isset($_SESSION["klantnummer"])) {
 				header("location: ./login.php");
 				exit;
 			}
 
-			require_once "./includes/cart.inc.php";
-
+			include_once "./includes/cart.inc.php";
 		?>
 
 		<div id="cartcontent">
@@ -86,12 +84,13 @@
 
 						removeCart($db, $klantnummer, $productnummer);
 					}
-
+					
 					#registreert of iemand op de bestel knop drukt
 					if (isset($_POST["bestel"])) {
 						$klantnummer = $_SESSION["klantnummer"];
 						bestel($db, $klantnummer);
 					}
+
 
 				?>
 			</div>

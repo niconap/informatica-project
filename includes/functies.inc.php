@@ -149,6 +149,7 @@ function loginUser($db, $emailadres, $wachtwoord) {
 		exit;
 	}elseif ($checkwachtwoord === true) {
 		session_start();
+
 		$_SESSION["klantnummer"] = $takenEmail["klantnummer"];
 		$_SESSION["voornaam"] = $takenEmail["voornaam"];
 		$_SESSION["achternaam"] = $takenEmail["achternaam"];
