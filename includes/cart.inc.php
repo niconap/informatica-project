@@ -36,3 +36,34 @@ function removeCart($db, $klantnummer, $productnummer) {
 	header("location: ../cart.php?verwijderd");
 	exit;
 }
+
+function bestel($db, $klantnummer){
+	$sqlbestel = 'SELECT * FROM winkelwagen WHERE klantnummer=:klantnummer';
+
+	if(!$stmt = $db->prepare($sqlbestel)) {
+		header("location: ../cart.php");
+		exit;
+	}
+
+	$stmt->bindParam(':klantnummer', $klantnummer);
+	$stmt->execute();
+	
+	while($row = $stmt->fetch(SQLITE3_NUM)) {
+		$sqlbestelitem = 'INSERT INTO bestellingen (besteldatum, productnummer, klantnummer) VALUES (?, ?, ?)';
+
+		if(!$stmtitem = $db->prepare($sqlbestelitem)) {
+			header("location: ../cart.php");
+			exit;
+		}
+
+		$stmtitem->bindParam(1, date("d-m-Y"));
+		$stmtitem->bindParam(2, $row["productnummer"]);
+		$stmtitem->bindParam(3, $klantnummer);
+
+		$stmtitem->execute();
+		$stmtitem=null;
+	}
+
+	header("location: ../pmsucces.php");
+	exit;
+}

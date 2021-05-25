@@ -68,7 +68,9 @@
 							<hr>
 							€'.$totaalprijs.'
 							<br><br>
-							<button id="bestel" type="submit" name="bestel">Bestel</button>
+							<form method="POST">
+								<button id="bestel" type="submit" name="bestel">Bestel</button>
+							</form>
 						</div>';
 					}	
 					
@@ -85,6 +87,11 @@
 						removeCart($db, $klantnummer, $productnummer);
 					}
 
+					#registreert of iemand op de bestel knop drukt
+					if (isset($_POST["bestel"])) {
+						$klantnummer = $_SESSION["klantnummer"];
+						bestel($db, $klantnummer);
+					}
 
 				?>
 			</div>
