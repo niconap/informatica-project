@@ -25,9 +25,9 @@
 
 #grid {
   display: grid;
-  grid-template-areas: 
-  'main main main main'
-  'none none footer footer';
+  grid-template-areas:
+    'main main main main'
+    'none none footer footer';
 }
 
 #bestel {
@@ -58,14 +58,13 @@
   width: 1200px;
   height: 250px;
   margin: 15px;
-  
+
   display: grid;
-  grid-template-areas: 
-  'foto naam none prijs '
-  'foto beschrijving beschrijving verwijder';
+  grid-template-areas:
+    'foto naam none prijs '
+    'foto beschrijving beschrijving verwijder';
   grid-template-columns: 200px 200px 500px 300px;
 }
-
 
 .itemFoto {
   grid-area: foto;
@@ -87,7 +86,6 @@
   margin-left: 3em;
 }
 
-
 .Foto {
   max-height: 10em;
   max-width: 10em;
@@ -95,14 +93,6 @@
 
 .Naam {
   font-size: 30px;
-}
-
-.Prijs {
-  
-}
-
-.Beschrijving {
-  
 }
 
 .verwijder {
@@ -127,4 +117,3 @@
   width: 0px;
   height: 0px;
 }
-
