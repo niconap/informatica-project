@@ -7,7 +7,7 @@ if (isset($_SESSION["klantnummer"])) {
     echo'<nav>
             <img id="logo" src="./images/logo.png">
             <ul>
-                <li><a class="heading" href="./index.php">Home</a></li>
+                <li><a class="heading" href="./index.php#">Home</a></li>
                 <li><a class="heading" href="./index.php#ourcollection">Shop</a></li>
                 <li><a class="heading" href="./about.php">Over</a></li>
                 <li><a class="heading" href="./account.php">Account</a></li>
