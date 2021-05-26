@@ -3,8 +3,7 @@
   position: absolute;
   top: 45%;
   left: 50%;
-  width: 410px;
-  height: 410px;
+  width: 25em;
   -ms-transform: translate(-50%, -45%);
   transform: translate(-50%, -45%);
   background-color: rgb(231, 231, 231);

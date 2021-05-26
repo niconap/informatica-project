@@ -56,7 +56,7 @@ function bestel($db, $klantnummer){
 			exit;
 		}
 
-		$stmtitem->bindParam(1, date("d-m-Y"));
+		$stmtitem->bindParam(1, date("H:i:s d-m-Y"));
 		$stmtitem->bindParam(2, $row["productnummer"]);
 		$stmtitem->bindParam(3, $klantnummer);
 

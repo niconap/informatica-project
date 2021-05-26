@@ -21,7 +21,7 @@
 			<p>
 				Bedankt voor uw bestelling!<br>
 				<br><br>
-				U kunt uw bestelling(en) zien in "<a href="./account.php#bestellingen">Account → Bestellingen</a>".<br>
+				U kunt uw bestelling(en) zien in "<a href="./bestellingen.php">Account → Bestellingen</a>".<br>
 				<br>
 				Als er iets ontbreekt of er is iets mis gegaan,<br>
 				neem dan contact met ons op.<br>

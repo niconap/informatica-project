@@ -8,6 +8,11 @@
   font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
+html {
+  /*Dit zorgt ervoor dat de pagina niet opschuift*/
+  overflow-y: scroll;
+}
+
 body {
   background-color: rgb(241, 240, 240);
 }

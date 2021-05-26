@@ -17,13 +17,15 @@
 	?>
 
 	<section>
-			<div id="accounthok">
-				<div id="accountinhoud">
-					<h1>Account</h1>
+		<div id="accounthok">
+			<div id="accountinhoud">
+				<h1>Account</h1>
 				<br>
 				<?php
 					echo '<p>Hallo '.$_SESSION['voornaam'].' '.$_SESSION['achternaam'].',</p><br>';
 					
+					echo '<a href="bestellingen.php">Hier</a> kunt u uw bestellingen bekijken.<br><br>';
+
 					echo '<h3>Contactgegevens</h3>';
 					echo '<p>Emailadres: '.$_SESSION['email'].'<br>Telefoonnummer: '.$_SESSION['telefoonnummer'].'</p><br>';
 					
@@ -38,7 +40,7 @@
 					<button id="loguit" type="submit" name="loguit">Log uit</button>
 				</form>
 			</div>
-			</div>
+		</div>
 	</section>
 
 	</body>
