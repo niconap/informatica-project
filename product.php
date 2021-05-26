@@ -8,15 +8,18 @@
 	</head>
 	<body>
 		<?php 
+			# Navigatie oproepen
 			include_once "navigation.php";
 			include_once "./core/dbconnectie.php";
 		?>
 		<div id="content">
 			<?php
+				# Kijken of er een product is geselecteerd, zo niet dan wordt de gebruiker teruggestuurd 
 				if(!$_GET['productnummer']){
 					header("location: ./index.php");
 				}
 
+				# De data van het product weergeven
 				$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 				
 				$productnummer = substr($url, strrpos($url, '=') + 1, 1);
@@ -45,7 +48,6 @@
 				echo "<br>
 				<br>
 				<p id=\"beschrijving\">Hier kan een beschrijving</p>";
-				
 			?>
 		</div>
 	</body>

@@ -7,8 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-
 		<?php
+			# Navigatie oproepen
 			include_once "navigation.php";
 
 			if (isset($_SESSION["klantnummer"])) {
@@ -63,6 +63,7 @@
 						<br><br>
 
 						<?php
+							# Kijken of alle gegevens geldig zijn
 							if (isset($_GET["error"])) {
 								echo '<div id = "error">';
 								if ($_GET["error"] == "leeg") {

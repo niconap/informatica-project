@@ -8,8 +8,10 @@
 	</head>
 	<body>
 		<?php
+			# Navigatie oproepen
 			include_once "navigation.php";
 
+			# Niet ingelogde gebruikers laten inloggen
 			if (!isset($_SESSION["klantnummer"])) {
 				header("location: ../login.php");
 			}
@@ -21,6 +23,7 @@
 			<h2>BESTELLINGEN</h2>
 
 			<?php
+				# Kijken welke items er besteld zijn en die op de pagina zetten
 				if($aantalItems <= 0) {
 					echo 'U heeft nog niks besteld of er is iets fout gegaan.<br><br>
 						Als er iets fout gegaan is kunt u contact opnemen.<br>
@@ -52,7 +55,7 @@
 					}
 					echo '</div>';
 					echo '<br><br>Als er iets fout gegaan is kunt u contact opnemen.<br>
-						De gegevens van onszijn op <a href="about.php">deze</a> pagina weergegeven.<br><br>';
+						De gegevens van ons zijn op <a href="about.php">deze</a> pagina weergegeven.<br><br>';
 				}	
 			?>
 

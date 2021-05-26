@@ -1,8 +1,8 @@
 <?php 
-#start de sessie om te kijken of iemand ingelogd is
+# Start de sessie om te kijken of iemand ingelogd is
 session_start();
 
-#hier wordt de navigatie gemaakt, deze verschild als de klant wel of niet is ingelogd
+# Hier wordt de navigatie gemaakt, deze verschild als de klant wel of niet is ingelogd
 if (isset($_SESSION["klantnummer"])) {
     echo'<nav>
             <img id="logo" src="./images/logo.png">

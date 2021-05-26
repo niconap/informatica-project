@@ -9,6 +9,7 @@
 	<body>
 
 	<?php
+		# Navigatie oproepen
 		include_once "navigation.php";
 
 		if (!isset($_SESSION["klantnummer"])) {
@@ -22,6 +23,7 @@
 				<h1>Account</h1>
 				<br>
 				<?php
+					# Data van de klant weergeven
 					echo '<p>Hallo '.$_SESSION['voornaam'].' '.$_SESSION['achternaam'].',</p><br>';
 					
 					echo '<a href="bestellingen.php">Hier</a> kunt u uw bestellingen bekijken.<br><br>';

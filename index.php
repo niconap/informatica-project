@@ -20,30 +20,31 @@
         moeten aanmaken of dat ze moeten inloggen */
         if (isset($_SESSION["klantnummer"])) {
         echo '<div id="landingtext">
-            <h1 id="title">TIM SMELIK</h1>
-            <h3>Epoxy Kunstenaar</h3>
-            <a href="#ourcollection" id="shopnow">Shop nu</a>
-        </div>';
+                <h1 id="title">TIM SMELIK</h1>
+                <h3>Epoxy Kunstenaar</h3>
+                <a href="#ourcollection" id="shopnow">Shop nu</a>
+            </div>';
         } else {
             echo '<div id="landingtext">
-            <h1 id="title">TIM SMELIK</h1>
-            <h3>Epoxy Kunstenaar</h3>
-            <p id="maakaccount"><a href="./registratie.php">
-                    Maak een account aan
-                </a> of 
-                <a href="login.php">
-                    log in
-                </a>
-                om te shoppen
-            </p>
-            </div>';
+                    <h1 id="title">TIM SMELIK</h1>
+                    <h3>Epoxy Kunstenaar</h3>
+                    <p id="maakaccount">
+                        <a href="./registratie.php">
+                            Maak een account aan
+                        </a> of 
+                        <a href="login.php">
+                            log in
+                        </a>
+                        om te shoppen
+                    </p>
+                </div>';
         }
 
         # Zorgt voor het maken van de titel van de shop
         echo '<div id="ourcollection">
-            <h3>ONZE COLLECTIE</h3>
-            <p>De collectie van Tim Smelik bestaat uit zijn eigen ideëen en creativiteit.</p>
-        </div>';
+                <h3>ONZE COLLECTIE</h3>
+                <p>De collectie van Tim Smelik bestaat uit zijn eigen ideëen en creativiteit.</p>
+            </div>';
 
         # Renderen van de producten
         echo '<div id="shop">';
@@ -69,21 +70,21 @@
                     </div>';
                 } else {
                     echo '<div class="item">
-                        <a href="product.php?productnummer='.$this->itemid.'">
-                            <img src="'. $this->itemimg .'" class="itemimg" />
-                            <br><br>
-                            <span class="itemname">'. $this->itemname .'</span>
-                        </a>
-                        <span class="itemprice">€'. $this->itemprice .'</span>
-                        <span id="disabled">
-									<a href="./registratie.php">
-										Maak een account aan
-									</a> of 
-									<a href="login.php">
-										log in
-									</a>
-								</span>
-                    </div>';
+                            <a href="product.php?productnummer='.$this->itemid.'">
+                                <img src="'. $this->itemimg .'" class="itemimg" />
+                                <br><br>
+                                <span class="itemname">'. $this->itemname .'</span>
+                            </a>
+                            <span class="itemprice">€'. $this->itemprice .'</span>
+                            <span id="disabled">
+								<a href="./registratie.php">
+									Maak een account aan
+								</a> of 
+								<a href="login.php">
+									log in
+								</a>
+							</span>
+                        </div>';
                 }
             }
 
@@ -95,7 +96,7 @@
             }
         }
 
-        # De vervangende manier voor de database
+        # Producten uit de database halen
         while($row = $resultaat->fetch(SQLITE3_NUM)) {
             $productnummer = $row["productnummer"];
             $productnaam = $row["productnaam"];
@@ -122,7 +123,7 @@
 		if (isset($_GET["productnummer"])) {
 			$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 						
-			#haalt het productnummer uit de url
+			# Haalt het productnummer uit de url
 			$productnummer = substr($url, strrpos($url, '&') + 1, 1);		
 		    $klantnummer = $_SESSION["klantnummer"];
 

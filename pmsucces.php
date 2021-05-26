@@ -8,6 +8,7 @@
 	</head>
 	<body>
 		<?php
+			# Navigatie oproepen
 			include_once "navigation.php";
 
 			if (!isset($_SESSION["klantnummer"]) OR !isset($_POST["bestel2"])) {

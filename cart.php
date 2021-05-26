@@ -8,8 +8,10 @@
 	</head>
 	<body>
 		<?php
+			# Navigatie oproepen
 			include_once "navigation.php";
 
+			# Gebruikers die niet ingelogd zijn naar het login scherm sturen
 			if (!isset($_SESSION["klantnummer"])) {
 				header("location: ./login.php");
 				exit;
@@ -22,7 +24,7 @@
 			<h2>WINKELWAGEN</h2>
 			<div id="grid">
 				<?php
-				
+					# Kijken welke items er in de winkelmand zitten
 					if($aantalItems <= 0) {
 						echo 'Er zitten geen items in uw winkelwagen';
 					} elseif ($aantalItems >= 1) {
@@ -52,7 +54,6 @@
 									</form>
 								</div>';
 
-							//$productnummer = $row["productnummer"];
 							$prijs = $row["prijs"];
 							$totaalprijs = $totaalprijs + $prijs;
 						}
@@ -74,17 +75,16 @@
 					
 				
 					
-					#registreert of iemand de verwijder knop indrukt
+					# Registreert of iemand de verwijder knop indrukt
 					if (isset($_GET["productnummer"])) {
 						$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 						
-						#haalt het productnummer uit de url
+						# Haalt het productnummer uit de url
 						$productnummer = substr($url, strrpos($url, '&') + 1, 1);				
 						$klantnummer = $_SESSION["klantnummer"];
 
 						removeCart($db, $klantnummer, $productnummer);
 					}
-
 				?>
 			</div>
 		</div>

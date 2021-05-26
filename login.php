@@ -31,6 +31,7 @@
 					<input type="password" name="wachtwoord" placeholder="Wachtwoord" required>
 					<br><br>
 					<?php
+						# Kijken of de ingevoerde gegevens geldig zijn
 						if (isset($_GET["error"])) {
 							echo "<div id='error'>";
 							if ($_GET["error"] == "leeg") {
