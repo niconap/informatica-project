@@ -9,15 +9,6 @@ function emptyInputSignup($voornaam, $achternaam, $emailadres, $woonplaats, $pos
 	return $result;
 }
 
-/*function invalidAdress($postcode, $straatnaam, $huisnummer) {
-	$result;
-	if () {
-		$result = true;
-	} else {
-		$result = false;
-	}
-	return $result;
-}*/
 
 function invalidEmail($emailadres) {
 	if (!filter_var($emailadres, FILTER_VALIDATE_EMAIL)) {
@@ -28,6 +19,7 @@ function invalidEmail($emailadres) {
 	return $result;
 }
 
+
 function passwordMatch($wachtwoord, $wachtwoordbevestiging) {
 	if ($wachtwoord !== $wachtwoordbevestiging) {
 		$result = true;
@@ -36,6 +28,7 @@ function passwordMatch($wachtwoord, $wachtwoordbevestiging) {
 	}
 	return $result;
 }
+
 
 function passwordLength($wachtwoordbevestiging) {
 	$count = 0;
@@ -53,11 +46,9 @@ function passwordLength($wachtwoordbevestiging) {
 	return $result;
 }
 
+
 function takenEmail($db, $emailadres) {
 	$sql = "SELECT * FROM klanten WHERE email = :email;";
-
-	//$stmt = sqlite3_stmt_init($db);
-	//SQLite3::prepare($stmt);
 
 	if (!$stmt = $db->prepare($sql)) {
 		header("location: ../registratie.php?error=stmtfailed");
@@ -66,18 +57,10 @@ function takenEmail($db, $emailadres) {
 	
 	$emailzonderhoofdletters = strtolower($emailadres);
 	$stmt->bindParam(":email", $emailzonderhoofdletters);
-	//SQLite3Stmt::bindParam($stmt, $emailadres);
-	//sqlite3_stmt_bind_parameter_name($stmt, $emailadres);
 
 	$stmt->execute();
-	//SQLite3Stmt::execute($stmt);
-	//sqlite3_stmt_execute($stmt);
-
-	//$resultData = $stmt->execute();
-	//$resultData = sqlite3_stmt_get_result($stmt);
 
 	if($row = $stmt->fetch()) {
-	//if ($row = sqlite3_fetch_assoc($stmt)) {
 		return $row;
 	} else {
 		$result = false;
@@ -87,13 +70,13 @@ function takenEmail($db, $emailadres) {
 	$stmt->close();
 }
 
+
 function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord, $antwoord) {
 	If($antwoord != 10) {
 		header("location: ../registratie.php?error=reken");
 		exit;
 	}
 	
-	//$sql = "INSERT INTO klanten (voornaam, achternaam, straatnaam, huisnummer, postcode, woonplaats, telefoonnummer, email, wachtwoord) VALUES (:voornaam, :achternaam, :straatnaam, :huisnummer, :postcode, :woonplaats, :telefoonnummer, :email, :wachtwoord);";
 	$sql = "INSERT INTO klanten (voornaam, achternaam, straatnaam, huisnummer, postcode, woonplaats, telefoonnummer, email, wachtwoord) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 	if(!$stmt = $db->prepare($sql)) {
@@ -122,6 +105,7 @@ function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $
 	exit;
 }
 
+
 function emptyInputLogin($emailadres, $wachtwoord) {
 	if (empty($emailadres) || empty($wachtwoord)) {
 		$result = true;
@@ -130,6 +114,7 @@ function emptyInputLogin($emailadres, $wachtwoord) {
 	}
 	return $result;
 }
+
 
 function loginUser($db, $emailadres, $wachtwoord) {
 	$emailzonderhoofdletters = strtolower($emailadres);

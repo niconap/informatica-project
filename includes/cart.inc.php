@@ -67,3 +67,23 @@ function bestel($db, $klantnummer){
 	header("location: ../pmsucces.php");
 	exit;
 }
+
+
+function editInfo($db, $kolom, $waarde, $klantnummer) {
+	$sqledit = 'UPDATE klanten SET :kolom=:waarde WHERE klantnummer=:klantnummer';
+
+	if(!$stmt = $db->prepare($sqledit)) {
+		header("location: ../index.php");
+		exit;
+	}
+
+	$stmt->bindParam(':kolom', $kolom);
+	$stmt->bindParam(':waarde', $waarde);
+	$stmt->bindParam(':klantnummer', $klantnummer);
+
+	$stmt->execute();
+	$stmt=null;
+
+	header("location: ../order.php?aangepast");
+	exit;
+}

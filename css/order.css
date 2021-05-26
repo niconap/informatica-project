@@ -43,4 +43,13 @@
   #bestel {
     margin-bottom: 0px;
   }
+
+  .firstrow {
+    text-align: left;
+    font-weight: normal;
+  }
+  
+  table {
+    font-weight: normal;
+  }
 }
