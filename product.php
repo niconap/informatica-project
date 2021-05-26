@@ -14,12 +14,14 @@
 		<div id="content">
 			<?php
 				if(!$_GET['productnummer']){
-					header("location: index.php");
+					header("location: ./index.php");
 				}
 
-				$productnummer = substr($_GET['productnummer'], strrpos($_GET['productnummer'], 'r') + 1, 1);
+				$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				
+				$productnummer = substr($url, strrpos($url, '=') + 1, 1);
 
-				$sql = 'SELECT * FROM producten WHERE productnummer'.$productnummer;
+				$sql = 'SELECT * FROM producten WHERE productnummer='.$productnummer;
 				$resultaat = $db->query($sql);
 				$row = $resultaat->fetch(SQLITE3_NUM);
 
