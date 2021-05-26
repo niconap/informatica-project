@@ -24,6 +24,18 @@
   font-weight: lighter;
 }
 
+#maakaccount {
+  text-decoration: none;
+  position: relative;
+  width: fit-content;
+  top: 370px;
+  border: none;
+  background-color: #acacac;
+  color: white;
+  padding: 15px 70px 15px 70px;
+  font-size: 15px;
+}
+
 #shopnow {
   text-decoration: none;
   position: relative;
@@ -110,12 +122,14 @@
   font-size: 15px;
 }
 
-#disabled a {
+#disabled a,
+#maakaccount a {
   color: white;
   text-decoration: none;
 }
 
-#disabled a:hover {
+#disabled a:hover,
+#maakaccount a:hover {
   color: rgb(253, 170, 183);
 }
 

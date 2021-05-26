@@ -15,12 +15,29 @@
         include_once "./core/dbconnectie.php";
         include_once "./includes/index.inc.php";
 
-        # Zorgt voor het maken van de landing image
+        /* Zorgt voor het maken van de landing image en tekst, 
+        als de gebruiker niet is ingelogd staat er dat ze een account
+        moeten aanmaken of dat ze moeten inloggen */
+        if (isset($_SESSION["klantnummer"])) {
         echo '<div id="landingtext">
             <h1 id="title">TIM SMELIK</h1>
             <h3>Epoxy Kunstenaar</h3>
-            <a href="#ourcollection" id="shopnow">Shop Nu</a>
+            <a href="#ourcollection" id="shopnow">Shop nu</a>
         </div>';
+        } else {
+            echo '<div id="landingtext">
+            <h1 id="title">TIM SMELIK</h1>
+            <h3>Epoxy Kunstenaar</h3>
+            <p id="maakaccount"><a href="./registratie.php">
+                    Maak een account aan
+                </a> of 
+                <a href="login.php">
+                    log in
+                </a>
+                om te shoppen
+            </p>
+            </div>';
+        }
 
         # Zorgt voor het maken van de titel van de shop
         echo '<div id="ourcollection">
@@ -28,6 +45,7 @@
             <p>De collectie van Tim Smelik bestaat uit zijn eigen ideëen en creativiteit.</p>
         </div>';
 
+        # Renderen van de producten
         echo '<div id="shop">';
         class Shopitem{
             public $itemimg;
@@ -77,28 +95,6 @@
             }
         }
 
-
-        # Deze array wordt vervangen door wat we uit de database halen
-        /*$array = array(
-            "danser" => array("img" => "./images/danser.jpg",
-            "description" => "Danser",
-            "price" => "€50,00",),
-            "gezicht" => array("img" => "./images/Oranje-rood hoofd.jpg",
-            "description" => "Oranje-rood Hoofd",
-            "price" => "€50,00",),
-            "purplehead" => array("img" => "./images/Paars Hoofd.jpg",
-            "description" => "Paars Hoofd",
-            "price" => "€50,00",),
-            "puzzle" => array("img" => "./images/Puzzel.jpg",
-            "description" => "Puzzel",
-            "price" => "€50,00",),
-        );
-        
-        foreach ($array as $element) {
-            $item = new Shopitem($element["img"], $element["description"], $element["price"]);
-            echo $item->getItem();
-        }*/
-
         # De vervangende manier voor de database
         while($row = $resultaat->fetch(SQLITE3_NUM)) {
             $productnummer = $row["productnummer"];
@@ -122,7 +118,7 @@
         }
         
 
-        #registreert of iemand de "In winkelmandje" knop indrukt
+        # Registreert of iemand de "In winkelmandje" knop indrukt
 		if (isset($_GET["productnummer"])) {
 			$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 						
