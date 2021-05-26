@@ -147,7 +147,8 @@
 
   #landingtext h1,
   #landingtext h3,
-  #landingtext a {
+  #landingtext a,
+  #landingtext p {
     position: static;
   }
 
@@ -159,7 +160,8 @@
     margin-bottom: 3em;
   }
 
-  #ourcollection {
+  #ourcollection,
+  #maakaccount {
     margin: 50px 0px;
     padding: 3em;
   }
@@ -170,5 +172,9 @@
 
   .item {
     width: 100%;
+  }
+
+  #disabled {
+    padding: 1em;
   }
 }

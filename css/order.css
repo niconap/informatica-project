@@ -28,3 +28,19 @@
 #bestel:hover {
   background-color: rgb(253, 170, 183);
 }
+
+@media screen and (max-width: 900px) {
+  #ordercontent {
+    margin: 9em 0em 0em 0em;
+  }
+
+  table {
+    width: 100%;
+    font-size: 0.7em;
+    text-align: left;
+  }
+
+  #bestel {
+    margin-bottom: 0px;
+  }
+}

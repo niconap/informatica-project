@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Tim's Art - Bestellen</title>
-		<link href="./css/style.css?v=2" rel="stylesheet" type="text/css">
-		<link href="./css/order.css?v=3" rel="stylesheet" type="text/css">
+		<link href="./css/style.css" rel="stylesheet" type="text/css">
+		<link href="./css/order.css" rel="stylesheet" type="text/css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
@@ -59,7 +59,6 @@
 						<form method="POST">
 							<button id="bestel" type="submit" name="bestel2">Bestel</button>
 						</form>
-						<br><br>
 				';
 
 				#registreert of iemand op de bestel knop drukt

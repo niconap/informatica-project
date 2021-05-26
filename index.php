@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="./css/index.css?v=50" rel="stylesheet" type="text/css">
+  <link href="./css/index.css" rel="stylesheet" type="text/css">
   <link href="./css/style.css" rel="stylesheet" type="text/css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

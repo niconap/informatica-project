@@ -55,7 +55,7 @@
 
 .item {
   border: 2px solid black;
-  width: 1200px;
+  width: 100%;
   height: 250px;
   margin: 15px;
 
@@ -116,4 +116,44 @@
   border: 0px solid white;
   width: 0px;
   height: 0px;
+}
+
+@media screen and (max-width: 900px) {
+  #cartcontent {
+    margin: 0px 9em 0px 0px;
+    width: 100%;
+  }
+
+  #grid {
+    display: block;
+    grid-template-areas: '';
+  }
+
+  #items,
+  .item {
+    width: 100%;
+    display: block;
+    border: none;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .verwijder {
+    margin-top: 1em;
+  }
+
+  .itemNaam,
+  .itemBeschrijving,
+  .itemPrijs {
+    margin-left: 0px;
+  }
+
+  .item {
+    margin: 0px;
+    height: fit-content;
+  }
+
+  #items {
+    margin-top: 5em;
+  }
 }
