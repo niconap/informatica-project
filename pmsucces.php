@@ -10,10 +10,11 @@
 		<?php
 			include_once "navigation.php";
 
-			if (!isset($_SESSION["klantnummer"])) {
+			if (!isset($_SESSION["klantnummer"]) OR !isset($_POST["bestel2"])) {
 				header("location: ./index.php");
 				exit;
 			}
+
 		?>
 
 		<div id="pmcontent">

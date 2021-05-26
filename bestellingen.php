@@ -14,7 +14,7 @@
 				header("location: ../login.php");
 			}
 
-			include_once "./includes/bestellingen.php";
+			include_once "./includes/bestellingen.inc.php";
 		?>
 
 		<div id="bestellingencontent">

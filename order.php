@@ -10,8 +10,8 @@
 		<?php
 			include_once "navigation.php";
 
-			if (!isset($_SESSION["klantnummer"])) {
-				header("location: ./login.php");
+			if (!isset($_SESSION["klantnummer"]) OR !isset($_POST["bestel"])) {
+				header("location: ./index.php");
 				exit;
 			}
 
@@ -52,7 +52,20 @@
 						<th>'.$_SESSION['huisnummer'].'</th>
 						<th><a href="">bewerk</a></th>					</tr>
 				</table>
+				<br><br>
+				<p>Hier komen de keuzes voor betalingen,<br>maar uit veiligheidsoverwegingen hebben wij die tijdelijk overgeslagen.</p>
+				<br><br>
+				<form method="POST">
+					<button id="bestel" type="submit" name="bestel2">Bestel</button>
+				</form>
+				<br><br>
 				';
+
+				#registreert of iemand op de bestel knop drukt
+				if (isset($_POST["bestel2"])) {
+					$klantnummer = $_SESSION["klantnummer"];
+					bestel($db, $klantnummer);
+				}
 			?>
 		</div>
 	</body>
