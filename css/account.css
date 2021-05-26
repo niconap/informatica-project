@@ -29,3 +29,17 @@
 #loguit:hover {
   background-color: rgb(253, 170, 183);
 }
+
+@media screen and (max-width: 900px) {
+  #accounthok {
+    position: static;
+    width: 15em;
+    margin: 40em 0em 0em 10em;
+    height: auto;
+  }
+
+  section {
+    text-align: center;
+    height: 50em;
+  }
+}
