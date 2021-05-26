@@ -27,7 +27,7 @@
 
 				echo '<img src="./images/'.$row["productafbeelding"].'">
 				<h2>'.$row["productnaam"].'</h2>
-				<p>Prijs: '.$row["prijs"].'</p>
+				<p>Prijs: €'.$row["prijs"].'</p>
 				<br>';
 
 				if (isset($_SESSION["klantnummer"])) {
