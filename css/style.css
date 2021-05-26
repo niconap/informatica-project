@@ -31,8 +31,8 @@ nav {
 
 nav #logo {
   grid-area: title;
-  width: 2.5em;
-  height: 2.5em;
+  width: 4em;
+  height: 4em;
 }
 
 nav ul {
@@ -46,8 +46,8 @@ nav li {
 
 nav #cart {
   grid-area: shopping;
-  height: 2.5em;
-  width: 2.5em;
+  height: 4em;
+  width: 4em;
 }
 
 nav .heading {
@@ -58,4 +58,31 @@ nav .heading {
 
 nav a:hover {
   color: rgb(253, 170, 183);
+}
+
+@media screen and (max-width: 900px) {
+  nav {
+    padding: 0px 0px 0.5em 0px;
+    grid-template-areas: 'title shopping navigation';
+  }
+
+  nav img {
+    margin-left: 1em;
+  }
+
+  nav a {
+    margin-right: 1em;
+  }
+
+  nav ul {
+    text-align: center;
+    margin-top: 1em;
+    padding-left: 0px;
+  }
+
+  nav #cart,
+  nav #logo {
+    width: 2.5em;
+    height: 2.5em;
+  }
 }
