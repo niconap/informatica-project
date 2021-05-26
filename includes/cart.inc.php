@@ -64,7 +64,8 @@ function bestel($db, $klantnummer){
 		$stmtitem=null;
 	}
 
-	header("location: ../pmsucces.php");
+	$stmt=null;
+	header("location: ./pmsucces.php");
 	exit;
 }
 

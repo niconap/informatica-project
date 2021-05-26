@@ -11,7 +11,7 @@
 			# Navigatie oproepen
 			include_once "navigation.php";
 
-			if (!isset($_SESSION["klantnummer"]) OR !isset($_POST["bestel2"])) {
+			if (!isset($_SESSION["klantnummer"])) {
 				header("location: ./index.php");
 				exit;
 			}
