@@ -98,23 +98,26 @@
 
         # Producten uit de database halen
         while($row = $resultaat->fetch(SQLITE3_NUM)) {
-            $productnummer = $row["productnummer"];
-            $productnaam = $row["productnaam"];
-			$prijs = $row["prijs"];
-            $productafbeelding = $row["productafbeelding"];
-            $productbeschrijving = $row["productbeschrijving"];
+            if($row["voorraad"] == 1){
 
-            $array = array(
-                $productnaam => array(
-                "img" => "./images/$productafbeelding",
-                "name" => "$productnaam",
-                "price" => "$prijs",
-                "id" => "$productnummer")
-            );
+                $productnummer = $row["productnummer"];
+                $productnaam = $row["productnaam"];
+                $prijs = $row["prijs"];
+                $productafbeelding = $row["productafbeelding"];
+                $productbeschrijving = $row["productbeschrijving"];
 
-            foreach($array as $element) {
-                $item = new Shopitem($element["img"], $element["name"], $element["price"], $element["id"]);
-                echo $item->getItem();
+                $array = array(
+                    $productnaam => array(
+                    "img" => "./images/$productafbeelding",
+                    "name" => "$productnaam",
+                    "price" => "$prijs",
+                    "id" => "$productnummer")
+                );
+
+                foreach($array as $element) {
+                    $item = new Shopitem($element["img"], $element["name"], $element["price"], $element["id"]);
+                    echo $item->getItem();
+                }
             }
         }
         
