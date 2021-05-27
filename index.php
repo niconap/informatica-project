@@ -98,8 +98,8 @@
 
         # Producten uit de database halen
         while($row = $resultaat->fetch(SQLITE3_NUM)) {
+            #checkt of het product in de voorraad is en laat het zien indien het in voorraad is
             if($row["voorraad"] == 1){
-
                 $productnummer = $row["productnummer"];
                 $productnaam = $row["productnaam"];
                 $prijs = $row["prijs"];
