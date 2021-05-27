@@ -38,6 +38,7 @@ function removeCart($db, $klantnummer, $productnummer) {
 }
 
 
+#wijzigt de gegevens uit account of tijdens de bestelling, wanneer de gebruiker dit opvraagt
 function editInfo($db, $kolom, $waarde, $klantnummer) {
 	$sqledit = 'UPDATE klanten SET '.$kolom.'=:waarde WHERE klantnummer=:klantnummer';
 
@@ -59,6 +60,7 @@ function editInfo($db, $kolom, $waarde, $klantnummer) {
 }
 
 
+#voegt product en klant toe aan de tabel bestellingen tabel in de database
 function bestel($db, $klantnummer){
 	$sqlbestel = 'SELECT * FROM winkelwagen WHERE klantnummer=:klantnummer';
 

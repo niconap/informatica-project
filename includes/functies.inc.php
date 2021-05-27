@@ -1,5 +1,5 @@
 <?php
-
+#checkt of de inputs tijdens het registreren niet leeg is
 function emptyInputSignup($voornaam, $achternaam, $emailadres, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord, $wachtwoordbevestiging) {
 	if (empty($voornaam) || empty($achternaam) || empty($emailadres) || empty($woonplaats) || empty($postcode) || empty($straatnaam) || empty($huisnummer) || empty($wachtwoord) || empty($wachtwoordbevestiging)) {
 		$result = true;
@@ -9,7 +9,7 @@ function emptyInputSignup($voornaam, $achternaam, $emailadres, $woonplaats, $pos
 	return $result;
 }
 
-
+#checkt tijdens het registeren of het emailadres wel geldig is
 function invalidEmail($emailadres) {
 	if (!filter_var($emailadres, FILTER_VALIDATE_EMAIL)) {
 		$result = true;
@@ -19,7 +19,7 @@ function invalidEmail($emailadres) {
 	return $result;
 }
 
-
+#checkt of het wachtwoord en de wachtwoordbevestiging gelijk zijn tijdens de registratie
 function passwordMatch($wachtwoord, $wachtwoordbevestiging) {
 	if ($wachtwoord !== $wachtwoordbevestiging) {
 		$result = true;
@@ -29,7 +29,7 @@ function passwordMatch($wachtwoord, $wachtwoordbevestiging) {
 	return $result;
 }
 
-
+#checkt of het wachtwoord wel lang genoeg is
 function passwordLength($wachtwoordbevestiging) {
 	$count = 0;
 
@@ -46,7 +46,7 @@ function passwordLength($wachtwoordbevestiging) {
 	return $result;
 }
 
-
+#checkt tijdens het registreren of het emailadres al gebruikt is
 function takenEmail($db, $emailadres) {
 	$sql = "SELECT * FROM klanten WHERE email = :email;";
 
@@ -70,7 +70,7 @@ function takenEmail($db, $emailadres) {
 	$stmt->close();
 }
 
-
+#registreert de gebruiker en zet het in de database in de tabel klanten
 function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord, $antwoord) {
 	If($antwoord != 10) {
 		header("location: ../registratie.php?error=reken");
@@ -105,7 +105,7 @@ function createUser($db, $voornaam, $achternaam, $emailadres, $telefoonnummer, $
 	exit;
 }
 
-
+#checkt of de inputs tijdens het log in proces niet leeg is
 function emptyInputLogin($emailadres, $wachtwoord) {
 	if (empty($emailadres) || empty($wachtwoord)) {
 		$result = true;
@@ -115,7 +115,7 @@ function emptyInputLogin($emailadres, $wachtwoord) {
 	return $result;
 }
 
-
+#checkt of de informatie van de gebruiker correct is en logt de gebruiker in
 function loginUser($db, $emailadres, $wachtwoord) {
 	$emailzonderhoofdletters = strtolower($emailadres);
 	$takenEmail = takenEmail($db, $emailzonderhoofdletters);

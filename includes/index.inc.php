@@ -43,29 +43,3 @@ function addCart($db, $klantnummer, $productnummer) {
 	header("location: ../index.php?toegevoegd");
 	exit;
 }
-
-#laten zien als product op de productpagina
-function productShow($db, $productnummer){
-	$productshow = true;
-	$sql = 'SELECT voorraad FROM producten WHERE productnummer=:productnummer';
-
-	if(!$stmt = $db->prepare($sql)) {
-		header("location: ../index.php");
-		exit;
-	}
-
-	$stmt->bindParam(':productnummer', $productnummer);
-
-	$stmt->execute();
-	$row = $stmt->fetch(SQLITE3_NUM);
-
-	if ($row["voorraad"] == 0) {
-		$productshow = false;
-		return $productshow;
-		exit;
-	}
-
-	$stmt=null;
-	return $productshow;
-	exit;
-}
