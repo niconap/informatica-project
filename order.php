@@ -27,7 +27,7 @@
 				<br>
 				<table>
 					<tr>
-						<th class="firstrow">Telefoonnummer:</th>
+						<th class="firstrow">Telefoonnummer: &nbsp</th>
 						<th>'.$_SESSION['telefoonnummer'].'</th>
 						<th><a href="?telefoonnummer">bewerk</a></th>					
 					</tr>
@@ -101,7 +101,7 @@
 				';
 
 				#registreert of iemand op de "Bestel" knop drukt
-				if (isset($_GET["bestel2"])) {
+				if (isset($_POST["bestel2"])) {
 					$klantnummer = $_SESSION["klantnummer"];
 					bestel($db, $klantnummer);
 				}
@@ -111,47 +111,30 @@
 					$klantnummer = $_SESSION["klantnummer"];
 					if (isset($_POST["telefoonnummer"])) {
 						$waarde = $_POST["telefoonnummer"];
-						$kolom = "telefoonnummer";
+						$kolom = 'telefoonnummer';
 						editInfo($db, $kolom, $waarde, $klantnummer);
 
 					} elseif (isset($_POST["woonplaats"])) {
 						$waarde = $_POST["woonplaats"];
-						$kolom = "woonplaats";
+						$kolom = 'woonplaats';
 						editInfo($db, $kolom, $waarde, $klantnummer);
 
 					} elseif (isset($_POST["postcode"])) {
 						$waarde = strtoupper($_POST["postcode"]);
-						$kolom = "postcode";
+						$kolom = 'postcode';
 						editInfo($db, $kolom, $waarde, $klantnummer);
 
 					} elseif (isset($_POST["straatnaam"])) {
 						$waarde = $_POST["straatnaam"];
-						$kolom = "straatnaam";
+						$kolom = 'straatnaam';
 						editInfo($db, $kolom, $waarde, $klantnummer);
 
 					} elseif (isset($_POST["huisnummer"])) {
 						$waarde = $_POST["huisnummer"];
-						$kolom = "huisnummer";
+						$kolom = 'huisnummer';
 						editInfo($db, $kolom, $waarde, $klantnummer);
 					}
 				}
-
-				/*#registreert of iemand op de "Pas aan" knop heeft gedrukt
-				if(empty($_POST["emailadres"])){
-					$knop = $_POST["emailadres"];
-				}
-				#switch () {
-
-				#}
-
-				switch ($_POST[$knop]) {
-					case $knop = "emailadres":
-
-						break;
-					case $knop = "telefoonnummer":
-						
-						break;
-				}*/
 			?>
 		</div>
 	</body>

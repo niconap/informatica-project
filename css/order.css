@@ -29,6 +29,40 @@
   background-color: rgb(253, 170, 183);
 }
 
+.firstrow {
+  text-align: left;
+  font-weight: normal;
+}
+
+#pasaan {
+  border: none;
+  background-color: #121212;
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  padding: 8px 12px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#pasaan:hover {
+  background-color: rgb(253, 170, 183);
+}
+
+input {
+  border: 2px solid rgb(168, 168, 168);
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: white;
+  padding-left: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 170px;
+  margin-left: 7px;
+}
+
 @media screen and (max-width: 900px) {
   #ordercontent {
     margin: 9em 0em 0em 0em;
@@ -42,11 +76,6 @@
 
   #bestel {
     margin-bottom: 0px;
-  }
-
-  .firstrow {
-    text-align: left;
-    font-weight: normal;
   }
   
   table {

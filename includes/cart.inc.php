@@ -3,7 +3,7 @@ if (!isset($_SESSION["klantnummer"])) {
 	header("location: ../index.php");
 }
 
-require_once "./core/dbconnectie.php";
+include_once "./core/dbconnectie.php";
 
 #het opvragen van de items in de winkelwagen
 $sql = 'SELECT * FROM winkelwagen, producten WHERE winkelwagen.productnummer=producten.productnummer AND klantnummer='.$_SESSION["klantnummer"];
@@ -71,20 +71,21 @@ function bestel($db, $klantnummer){
 
 
 function editInfo($db, $kolom, $waarde, $klantnummer) {
-	$sqledit = 'UPDATE klanten SET :kolom=:waarde WHERE klantnummer=:klantnummer';
+	$sqledit = 'UPDATE klanten SET '.$kolom.'=:waarde WHERE klantnummer=:klantnummer';
 
 	if(!$stmt = $db->prepare($sqledit)) {
 		header("location: ../index.php");
 		exit;
 	}
-
-	$stmt->bindParam(':kolom', $kolom);
+	
 	$stmt->bindParam(':waarde', $waarde);
 	$stmt->bindParam(':klantnummer', $klantnummer);
 
 	$stmt->execute();
 	$stmt=null;
 
-	header("location: ../order.php?aangepast");
+	$_SESSION[$kolom] = $waarde;
+
+	header("location: ../order.php");
 	exit;
 }
