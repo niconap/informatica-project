@@ -11,6 +11,7 @@
 			# Navigatie oproepen
 			include_once "navigation.php";
 			include_once "./core/dbconnectie.php";
+			include_once "./includes/index.inc.php";
 		?>
 		<div id="content">
 			<?php
@@ -24,6 +25,10 @@
 				
 				$productnummer = substr($url, strrpos($url, '=') + 1, 1);
 
+				if(productShow($db, $productnummer) == false){
+					header("location: ./index.php#ourcollection");
+				}
+
 				$sql = 'SELECT * FROM producten WHERE productnummer='.$productnummer;
 				$resultaat = $db->query($sql);
 				$row = $resultaat->fetch(SQLITE3_NUM);
@@ -34,20 +39,20 @@
 				<br>';
 
 				if (isset($_SESSION["klantnummer"])) {
-					echo "<a id=\"button\">In winkelmandje</a>";
+					echo '<a id="button">In winkelmandje</a>';
 				} else {
-					echo "<span id=\"disabled\">
-							<a href=\"./registratie.php\">
+					echo '<span id="disabled">
+							<a href="./registratie.php">
 								Maak een account aan
 							</a> of 
-							<a href=\"login.php\">
+							<a href="login.php">
 								log in
 							</a>
-							</span>";
+							</span>';
 				}
-				echo "<br>
-				<br>
-				<p id=\"beschrijving\">Hier kan een beschrijving</p>";
+
+				echo '<br><br><br>
+					<p id="beschrijving">'.$row["productbeschrijving"].'</p>';
 			?>
 		</div>
 	</body>
