@@ -37,38 +37,6 @@ function removeCart($db, $klantnummer, $productnummer) {
 	exit;
 }
 
-function bestel($db, $klantnummer){
-	$sqlbestel = 'SELECT * FROM winkelwagen WHERE klantnummer=:klantnummer';
-
-	if(!$stmt = $db->prepare($sqlbestel)) {
-		header("location: ../cart.php");
-		exit;
-	}
-
-	$stmt->bindParam(':klantnummer', $klantnummer);
-	$stmt->execute();
-	
-	while($row = $stmt->fetch(SQLITE3_NUM)) {
-		$sqlbestelitem = 'INSERT INTO bestellingen (besteldatum, productnummer, klantnummer) VALUES (?, ?, ?)';
-
-		if(!$stmtitem = $db->prepare($sqlbestelitem)) {
-			header("location: ../cart.php");
-			exit;
-		}
-
-		$stmtitem->bindParam(1, date("H:i:s d-m-Y"));
-		$stmtitem->bindParam(2, $row["productnummer"]);
-		$stmtitem->bindParam(3, $klantnummer);
-
-		$stmtitem->execute();
-		$stmtitem=null;
-	}
-
-	$stmt=null;
-	header("location: ./pmsucces.php");
-	exit;
-}
-
 
 function editInfo($db, $kolom, $waarde, $klantnummer) {
 	$sqledit = 'UPDATE klanten SET '.$kolom.'=:waarde WHERE klantnummer=:klantnummer';
@@ -87,5 +55,60 @@ function editInfo($db, $kolom, $waarde, $klantnummer) {
 	$_SESSION[$kolom] = $waarde;
 
 	header("location: ../order.php");
+	exit;
+}
+
+
+function bestel($db, $klantnummer){
+	$sqlbestel = 'SELECT * FROM winkelwagen WHERE klantnummer=:klantnummer';
+
+	if(!$stmt = $db->prepare($sqlbestel)) {
+		header("location: ../cart.php");
+		exit;
+	}
+
+	$stmt->bindParam(':klantnummer', $klantnummer);
+	$stmt->execute();
+	
+	while($row = $stmt->fetch(SQLITE3_NUM)) {
+		#haalt het product uit de winkelwagen bij iedereen
+		$sqldel = 'DELETE FROM winkelwagen WHERE productnummer=:productnummer';
+		if(!$stmtitem = $db->prepare($sqldel)) {
+			header("location: ../cart.php");
+			exit;
+		}
+		$stmtitem->bindParam(':productnummer', $row["productnummer"]);
+
+		$stmtitem->execute();
+		$stmtitem=null;
+
+		#wijzigt de voorraad naar 0
+		$sqledit = 'UPDATE producten SET voorraad=0 WHERE productnummer=:productnummer';
+		if(!$stmtitem = $db->prepare($sqledit)) {
+			header("location: ../cart.php");
+			exit;
+		}
+		$stmtitem->bindParam(':productnummer', $row["productnummer"]);
+
+		$stmtitem->execute();
+		$stmtitem=null;
+		
+		#voegt product toe aan bestellingen
+		$sqlbestelitem = 'INSERT INTO bestellingen (besteldatum, productnummer, klantnummer) VALUES (?, ?, ?)';
+
+		if(!$stmtitem = $db->prepare($sqlbestelitem)) {
+			header("location: ../cart.php");
+			exit;
+		}
+		$stmtitem->bindParam(1, date("H:i:s d-m-Y"));
+		$stmtitem->bindParam(2, $row["productnummer"]);
+		$stmtitem->bindParam(3, $klantnummer);
+
+		$stmtitem->execute();
+		$stmtitem=null;
+	}
+
+	$stmt=null;
+	header("location: ./pmsucces.php");
 	exit;
 }
