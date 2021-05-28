@@ -3,8 +3,6 @@ if (!isset($_SESSION["klantnummer"])) {
 	header("location: ../index.php");
 }
 
-include_once "./core/dbconnectie.php";
-
 #het opvragen van de items in de winkelwagen
 $sql = 'SELECT * FROM winkelwagen, producten WHERE winkelwagen.productnummer=producten.productnummer AND klantnummer='.$_SESSION["klantnummer"];
 $resultaat = $db->query($sql);
@@ -36,29 +34,6 @@ function removeCart($db, $klantnummer, $productnummer) {
 	header("location: ../cart.php?verwijderd");
 	exit;
 }
-
-
-#wijzigt de gegevens uit account of tijdens de bestelling, wanneer de gebruiker dit opvraagt
-function editInfo($db, $kolom, $waarde, $klantnummer) {
-	$sqledit = 'UPDATE klanten SET '.$kolom.'=:waarde WHERE klantnummer=:klantnummer';
-
-	if(!$stmt = $db->prepare($sqledit)) {
-		header("location: ../index.php");
-		exit;
-	}
-	
-	$stmt->bindParam(':waarde', $waarde);
-	$stmt->bindParam(':klantnummer', $klantnummer);
-
-	$stmt->execute();
-	$stmt=null;
-
-	$_SESSION[$kolom] = $waarde;
-
-	header("location: ../order.php");
-	exit;
-}
-
 
 #voegt product en klant toe aan de tabel bestellingen tabel in de database
 function bestel($db, $klantnummer){

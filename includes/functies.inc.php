@@ -1,4 +1,6 @@
 <?php
+#In dit bestand staan alle functies die gebruikt worden om in te loggen of te registreren
+
 #checkt of de inputs tijdens het registreren niet leeg is
 function emptyInputSignup($voornaam, $achternaam, $emailadres, $woonplaats, $postcode, $straatnaam, $huisnummer, $wachtwoord, $wachtwoordbevestiging) {
 	if (empty($voornaam) || empty($achternaam) || empty($emailadres) || empty($woonplaats) || empty($postcode) || empty($straatnaam) || empty($huisnummer) || empty($wachtwoord) || empty($wachtwoordbevestiging)) {

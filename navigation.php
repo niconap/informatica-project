@@ -2,6 +2,8 @@
 # Start de sessie om te kijken of iemand ingelogd is
 session_start();
 
+include_once "./core/dbconnectie.php";
+
 # Hier wordt de navigatie gemaakt, deze verschild als de klant wel of niet is ingelogd
 if (isset($_SESSION["klantnummer"])) {
     echo'<nav>
