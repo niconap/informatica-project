@@ -23,10 +23,9 @@
   width: 44em;
   height: 6em;
   margin: 7px;
-  
+
   display: grid;
-  grid-template-areas: 
-  'foto nummer datum naam prijs';
+  grid-template-areas: 'foto nummer datum naam prijs';
   grid-template-columns: 5em, 5em, 5em, 5em, 5em;
 }
 
@@ -51,8 +50,47 @@
   grid-area: datum;
 }
 
-
 .Foto {
   max-height: 5em;
   max-width: 5em;
+}
+
+@media screen and (max-width: 900px) {
+  #bestellingencontent {
+    margin: 9em 0em 0em 0em;
+    padding: 1em;
+  }
+
+  #items,
+  .item {
+    border: none;
+  }
+
+  .item {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    margin: 2em 0em;
+  }
+
+  #bestellingencontent h2 {
+    padding: 0px;
+    font-size: 1.3em;
+    margin-right: -0.5em;
+  }
+
+  .itemFoto {
+    margin: 0px;
+  }
+
+  .itemFoto img {
+    max-height: 12em;
+    max-width: 12em;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #bestellingencontent h2 {
+    font-size: 1em;
+  }
 }

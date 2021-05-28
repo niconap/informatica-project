@@ -3,7 +3,7 @@
 	<head>
 		<title>Tim's Art - Bestellingen</title>
 		<link href="./css/style.css" rel="stylesheet" type="text/css">
-		<link href="./css/bestellingen.css?v=2" rel="stylesheet" type="text/css">
+		<link href="./css/bestellingen.css" rel="stylesheet" type="text/css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
