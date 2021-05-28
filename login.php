@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Tim's Art - Log in</title>
-		<link href="./css/style.css?v=2" rel="stylesheet" type="text/css">
-		<link href="./css/login.css?v=3" rel="stylesheet" type="text/css">
+		<link href="./css/style.css" rel="stylesheet" type="text/css">
+		<link href="./css/login.css" rel="stylesheet" type="text/css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
@@ -12,7 +12,7 @@
 		include_once "navigation.php";
 
 		if (isset($_SESSION["klantnummer"])) {
-			header("location: ../index.php");
+			header("location: ./index.php");
 		}
 	?>
 

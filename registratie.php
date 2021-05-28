@@ -12,7 +12,7 @@
 			include_once "navigation.php";
 
 			if (isset($_SESSION["klantnummer"])) {
-				header("location: ../index.php");
+				header("location: ./index.php");
 			}
 		?>
 
