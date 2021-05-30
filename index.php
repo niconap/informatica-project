@@ -64,8 +64,8 @@
                             <span class="itemname">'.$this->itemname.'</span>
                         </a>
                         <span class="itemprice">€'.$this->itemprice.'</span>
-                        <form method="GET">
-                            <input class="invisbleInput" type="productnummer" placeholder="productnummer" name="productnummer">
+                        <form method="POST">
+                            <input class="invisibleInput" name="productnummer">
                             <button type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a>
                         </form>
                     </div>';
@@ -98,6 +98,8 @@
         }
 
         # Producten uit de database halen
+        $sql = 'SELECT * FROM producten';
+        $resultaat = $db->query($sql);
         while($row = $resultaat->fetch(SQLITE3_NUM)) {
             #checkt of het product in de voorraad is en laat het zien indien het in voorraad is
             if($row["voorraad"] == 1){
@@ -124,14 +126,21 @@
         
 
         # Registreert of iemand de "In winkelmandje" knop indrukt
-		if (isset($_GET["productnummer"])) {
-			$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		if (isset($_POST["productnummer"])) {
+			# Maakt van de $_POST array een string
+			$POST = print_r($_POST, true);
+			
+			# Haalt alle nummers uit de string
+			$int = (int) filter_var($POST, FILTER_SANITIZE_NUMBER_INT);
 						
-			# Haalt het productnummer uit de url
-			$productnummer = substr($url, strrpos($url, '&') + 1, 1);		
-		    $klantnummer = $_SESSION["klantnummer"];
+			# Haalt het productnummer uit de nummers
+			$productnummer = substr($int, 0, 1);
 
-		    addCart($db, $klantnummer, $productnummer);
+            # Haalt het klantnummer uit de sessie
+			$klantnummer = $_SESSION["klantnummer"];
+
+			# Stopt alle informatie in de functie om het in het winkelmandje te krijgen
+			addCart($db, $klantnummer, $productnummer);
 		}
     ?>
 </body>

@@ -1,9 +1,4 @@
 <?php
-$sql = 'SELECT * FROM producten';
-
-$resultaat = $db->query($sql);
-
-
 # Voegt het toe aan de winkelwagen
 function addCart($db, $klantnummer, $productnummer) {
 	# Checkt of het product niet al in het winkelwagentje zit
@@ -18,7 +13,6 @@ function addCart($db, $klantnummer, $productnummer) {
 	$row = $stmt->fetch();
 
 	if($row["productnummer"] == $productnummer) {
-		header("location: ../index.php?2ekeer");
 		exit;
 	}
 
@@ -38,6 +32,5 @@ function addCart($db, $klantnummer, $productnummer) {
 	$stmt->execute();
 	$stmt=null;
 
-	header("location: ../index.php?toegevoegd");
 	exit;
 }
