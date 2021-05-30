@@ -1,4 +1,5 @@
 <?php
+# Zorgt voor het laten zien van de input en de knop als iemand op de "bewerl" link klikt
 function echoInput() {
 	$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	$link = substr($url, strrpos($url, '?') + 1);
@@ -38,7 +39,7 @@ function echoInput() {
 	}
 }
 
-#registreert en voert functie uit als iemand de knop "Pas aan" indrukt om de gegevens aan te passen
+# Registreert en voert functie uit als iemand de knop "Pas aan" indrukt om de gegevens aan te passen
 function pasAan($db) {	
 	if (isset($_POST["pasaan"])) {
 		$klantnummer = $_SESSION["klantnummer"];
@@ -70,7 +71,7 @@ function pasAan($db) {
 	}
 }
 
-#wijzigt de gegevens uit account of tijdens de bestelling, wanneer de gebruiker dit opvraagt
+# Wijzigt de gegevens uit account of tijdens de bestelling, wanneer de gebruiker dit opvraagt
 function editInfo($db, $kolom, $waarde, $klantnummer) {
 	$sqledit = 'UPDATE klanten SET '.$kolom.'=:waarde WHERE klantnummer=:klantnummer';
 

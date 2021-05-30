@@ -10,10 +10,14 @@
 
 	<?php
 		# Navigatie oproepen
-		include_once "navigation.php";
+		include_once "./navigation.php";
+
+		# Zorgt voor het sturen naar de login pagina, omdat je niet ingelogd bent
 		if (!isset($_SESSION["klantnummer"])) {
 			header("location: ../login.php");
 		}
+
+		# Het document waar we de functies vandaan halen
 		include_once "./includes/edit.inc.php";
 	?>
 

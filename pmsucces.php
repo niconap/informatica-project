@@ -8,9 +8,10 @@
 	</head>
 	<body>
 		<?php
-			# Navigatie oproepen
+			# Zorgt voor het oproepen van de navigatie
 			include_once "navigation.php";
 
+			# Zorgt voor het sturen naar de login pagina, omdat je niet ingelogd bent
 			if (!isset($_SESSION["klantnummer"])) {
 				header("location: ./index.php");
 				exit;

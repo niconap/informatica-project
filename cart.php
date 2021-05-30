@@ -17,6 +17,7 @@
 				exit;
 			}
 
+			# Het document waar we de functies vandaan halen
 			include_once "./includes/cart.inc.php";
 		?>
 

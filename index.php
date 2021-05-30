@@ -11,8 +11,9 @@
 <body>
     <?php 
         # Zorgt voor het oproepen van de navigatie
-        include_once "navigation.php";
-        include_once "./core/dbconnectie.php";
+        include_once "./navigation.php";
+
+        # Het document waar we de functies vandaan halen
         include_once "./includes/index.inc.php";
 
         /* Zorgt voor het maken van de landing image en tekst, 

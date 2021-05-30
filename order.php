@@ -8,13 +8,16 @@
 	</head>
 	<body>
 		<?php
+			# Zorgt voor het oproepen van de navigatie
 			include_once "navigation.php";
 
+			# Zorgt voor het sturen naar de login pagina, omdat je niet ingelogd bent
 			if (!isset($_SESSION["klantnummer"])) {
 				header("location: ./index.php");
 				exit;
 			}
 
+			# Het document waar we de functies vandaan halen
 			include_once "./includes/cart.inc.php";
 			include_once "./includes/edit.inc.php";
 		?>

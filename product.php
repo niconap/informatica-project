@@ -8,9 +8,11 @@
 	</head>
 	<body>
 		<?php 
-			# Navigatie oproepen
-			include_once "navigation.php";
-			include_once "./core/dbconnectie.php";
+			# Zorgt voor het oproepen van de navigatie
+			include_once "./navigation.php";
+
+			# Het document waar we de functies vandaan halen
+			include_once "./includes/index.inc.php"
 		?>
 		<div id="content">
 			<?php
@@ -32,9 +34,9 @@
 					header("location: ./index.php#ourcollection");
 				} elseif ($row["voorraad"] == 1) {
 					echo '<img src="./images/'.$row["productafbeelding"].'">
-					<h2>'.$row["productnaam"].'</h2>
-					<p>Prijs: €'.$row["prijs"].'</p>
-					<br>';
+						<h2>'.$row["productnaam"].'</h2>
+						<p>Prijs: €'.$row["prijs"].'</p>
+						<br>';
 
 					if (isset($_SESSION["klantnummer"])) {
 						echo '<a id="button">In winkelmandje</a>';
