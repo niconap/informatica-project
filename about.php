@@ -16,7 +16,7 @@
         # Zorgt voor de informatie op de pagina
         echo '<div id="aboutcontent">
                 <h2>OVER TIM</h2>
-                <p id="description">Tim Smelik is al jaren prachtige kunstwerken aan het maken met een bijzonder materiaal: epoxy. Hij giet prachtige vormen of buigt ze zo dat er een figuur te zien wordt. Het mixen van materialen zoals een stuk hout erbij of stukken metaal is niks nieuws en dit wordt vaak gedaan om een speciaal effect te geven aan het kunstwerk.</p>
+                <p id="description">Tim Smelik werd geboren in Nederland op 2 oktober 1961. Hij woont met zijn gezin in de Parijse regio Fourqueux. Hij studeerde biologie in de wetenschap en promoveerde in 1996. Door zijn opleiding is hij gewend nieuwe technieken onder de knie te krijgen en aan te passen voor zijn eigen doeleinden. Door deze houding kan hij jongleren met onderwerpen. Nieuwsgierig van aard heeft hij in de loop van zijn artistieke avonturen een nieuwe techniek ontwikkeld. Hij vormt de epoxy, die hij verft, giet en vormt zoals hij wil. De verschillende niveaus waaruit het werk bestaat, bieden transparantie en geven het licht verschillende reflecties. Het gezicht en het menselijk lichaam zijn de belangrijkste onderwerpen van de kunstenaar voor zijn sculpturen. Tim neemt 20 tot 40 uur in beslag om ze te voltooien en af te ronden. Hij maakt ook kroonluchters en epoxylampen door glasfragmenten en LED-tape te verwerken.</p>
             </div>
             <img id="aboutimg" src="./images/redlamp.jpg">';
 
