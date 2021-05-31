@@ -1,5 +1,5 @@
 <?php
-
+# Zorgt voor het registreren van de gebruiker als diegene op de "registreer" knop klikt
 if (isset($_POST["registreer"])) {
 	
 	$voornaam = $_POST["voornaam"];

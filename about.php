@@ -11,7 +11,7 @@
 <body>
     <?php 
         # Zorgt voor het oproepen van de navigatie
-        include_once "navigation.php";
+        include_once "./navigation.php";
 
         # Zorgt voor de informatie op de pagina
         echo '<div id="aboutcontent">

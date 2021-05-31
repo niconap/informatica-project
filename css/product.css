@@ -45,6 +45,12 @@ img {
   color: rgb(253, 170, 183);
 }
 
+.invisibleInput {
+  border: 0px solid white;
+  width: 0px;
+  height: 0px;
+}
+
 @media screen and (max-width: 900px) {
   #disabled {
     padding: 1em;

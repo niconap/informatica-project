@@ -1,14 +1,7 @@
 <?php
-require_once "./core/dbconnectie.php";
-
-$sql = 'SELECT * FROM producten';
-
-$resultaat = $db->query($sql);
-
-
-#toevoegen aan winkelwagen
+# Voegt het toe aan de winkelwagen
 function addCart($db, $klantnummer, $productnummer) {
-	#checkt of het product niet al in het winkelwagentje zit
+	# Checkt of het product niet al in het winkelwagentje zit
 	$sqlcheck = 'SELECT * FROM winkelwagen WHERE klantnummer='.$klantnummer.' AND productnummer='.$productnummer;
 	
 	if(!$stmt = $db->prepare($sqlcheck)) {
@@ -20,13 +13,12 @@ function addCart($db, $klantnummer, $productnummer) {
 	$row = $stmt->fetch();
 
 	if($row["productnummer"] == $productnummer) {
-		header("location: ../index.php?2ekeer");
 		exit;
 	}
 
 	$stmt=null;
 
-	#als het product niet in het winkelwagentje zit wordt het toegevoegd
+	# Als het product niet in het winkelwagentje zit wordt het toegevoegd
 	$sqltoevoegen = 'INSERT INTO winkelwagen (klantnummer, productnummer) VALUES (?, ?)';
 
 	if(!$stmt = $db->prepare($sqltoevoegen)) {
@@ -40,6 +32,5 @@ function addCart($db, $klantnummer, $productnummer) {
 	$stmt->execute();
 	$stmt=null;
 
-	header("location: ../index.php?toegevoegd");
 	exit;
 }

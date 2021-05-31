@@ -1,14 +1,15 @@
 <?php
+# Stuurt iemand terug als diegene niet ingelogd is
 if (!isset($_SESSION["klantnummer"])) {
 	header("location: ../index.php");
 }
 
-#het opvragen van de items in de winkelwagen
+# Vraagt de items op in de winkelwagen
 $sql = 'SELECT * FROM winkelwagen, producten WHERE winkelwagen.productnummer=producten.productnummer AND klantnummer='.$_SESSION["klantnummer"];
 $resultaat = $db->query($sql);
 
 
-#het opvragen van het aantal items in de winkelwagen
+# Vraagt het aantal items op in de winkelwagen
 $sqlAantal = 'SELECT count(productnummer) FROM winkelwagen WHERE klantnummer='.$_SESSION["klantnummer"];
 $resultaatAantal = $db->query($sqlAantal);
 
@@ -16,7 +17,7 @@ $sqlrow = $resultaatAantal->fetch(SQLITE3_NUM);
 $aantalItems = $sqlrow['count(productnummer)'];
 
 
-#verwijderen uit winkelwagen
+# Verwijdert het item uit de winkelwagen
 function removeCart($db, $klantnummer, $productnummer) {
 	$sqlverwijderen = "DELETE FROM winkelwagen WHERE klantnummer=:klantnummer AND productnummer=:productnummer";
 
@@ -35,7 +36,7 @@ function removeCart($db, $klantnummer, $productnummer) {
 	exit;
 }
 
-#voegt product en klant toe aan de tabel bestellingen tabel in de database
+# Voegt product en klant toe aan de tabel bestellingen tabel in de database
 function bestel($db, $klantnummer){
 	$sqlbestel = 'SELECT * FROM winkelwagen WHERE klantnummer=:klantnummer';
 
@@ -48,7 +49,7 @@ function bestel($db, $klantnummer){
 	$stmt->execute();
 	
 	while($row = $stmt->fetch(SQLITE3_NUM)) {
-		#haalt het product uit de winkelwagen bij iedereen
+		# Haalt het product uit de winkelwagen bij iedereen
 		$sqldel = 'DELETE FROM winkelwagen WHERE productnummer=:productnummer';
 		if(!$stmtitem = $db->prepare($sqldel)) {
 			header("location: ../cart.php");
@@ -59,7 +60,7 @@ function bestel($db, $klantnummer){
 		$stmtitem->execute();
 		$stmtitem=null;
 
-		#wijzigt de voorraad naar 0
+		# Wijzigt de voorraad naar 0
 		$sqledit = 'UPDATE producten SET voorraad=0 WHERE productnummer=:productnummer';
 		if(!$stmtitem = $db->prepare($sqledit)) {
 			header("location: ../cart.php");
@@ -70,7 +71,7 @@ function bestel($db, $klantnummer){
 		$stmtitem->execute();
 		$stmtitem=null;
 		
-		#voegt product toe aan bestellingen
+		# Voegt product toe aan bestellingen
 		$sqlbestelitem = 'INSERT INTO bestellingen (besteldatum, productnummer, klantnummer) VALUES (?, ?, ?)';
 
 		if(!$stmtitem = $db->prepare($sqlbestelitem)) {
