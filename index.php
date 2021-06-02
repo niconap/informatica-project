@@ -102,7 +102,7 @@
         $resultaat = $db->query($sql);
         while($row = $resultaat->fetch(SQLITE3_NUM)) {
             #checkt of het product in de voorraad is en laat het zien indien het in voorraad is
-            if($row["voorraad"] == 1){
+            if($row["voorraad"] >= 1){
                 $productnummer = $row["productnummer"];
                 $productnaam = $row["productnaam"];
                 $prijs = $row["prijs"];
@@ -136,11 +136,17 @@
 			# Haalt het productnummer uit de nummers
 			$productnummer = substr($int, 0, 1);
 
-            # Haalt het klantnummer uit de sessie
-			$klantnummer = $_SESSION["klantnummer"];
+            # Checkt of er 2 of meer producten op voorraad zijn en stuurt dan het persoon door naar die productpagina
+            checkVoorraad($db, $productnummer);
 
-			# Stopt alle informatie in de functie om het in het winkelmandje te krijgen
-			addCart($db, $klantnummer, $productnummer);
+            # Haalt het klantnummer uit de sessie
+            $klantnummer = $_SESSION["klantnummer"];
+
+            # Wanneer de voorraad groter dan 1 is ga je eerst al naar de productpagina
+            $aantal = 1;
+
+            # Stopt alle informatie in de functie om het in het winkelmandje te krijgen
+            addCart($db, $klantnummer, $productnummer, $aantal);
 		}
     ?>
 </body>

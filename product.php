@@ -30,17 +30,26 @@
 
 				if ($row["voorraad"] == 0) {
 					header("location: ./index.php#ourcollection");
-				} elseif ($row["voorraad"] == 1) {
+				} elseif ($row["voorraad"] >= 1) {
 					echo '<img src="./images/'.$row["productafbeelding"].'">
 						<h2>'.$row["productnaam"].'</h2>
 						<p>Prijs: €'.$row["prijs"].'</p>
 						<br>';
 
 					if (isset($_SESSION["klantnummer"])) {
-						echo '<form method="POST">
+						if($row["voorraad"]>=2) {
+							echo '<form method="POST">
 								<input class="invisibleInput" name="productnummer"></input>
+								<input class="inputNumber" min=1 max='.$row["voorraad"].' type="number" name="aantal" placeholder="aantal" value=1 required></input>
 								<button id="button" type="submit" name="'.$productnummer.'">In winkelmandje</button>
 							</form>';
+						} else {
+							echo '<form method="POST">
+								<input class="invisibleInput" name="productnummer"></input>
+								<input class="invisibleInput" min=1 max='.$row["voorraad"].' type="number" name="aantal" placeholder="aantal" value=1 required></input>
+								<button id="button" type="submit" name="'.$productnummer.'">In winkelmandje</button>
+							</form>';
+						}
 					} else {
 						echo '<span id="disabled">
 								<a href="./registratie.php">
@@ -49,7 +58,7 @@
 								<a href="login.php">
 									log in
 								</a>
-								</span>';
+							</span>';
 					}
 
 					echo '<br><p id="beschrijving">'.$row["productbeschrijving"].'</p>';
@@ -64,13 +73,16 @@
 					$int = (int) filter_var($POST, FILTER_SANITIZE_NUMBER_INT);
 								
 					# Haalt het productnummer uit de nummers
-					$productnummer = substr($int, 0, 1);
+					$productnummer = substr($int, 1, 1);
 
 					# Haalt het klantnummer uit de sessie
 					$klantnummer = $_SESSION["klantnummer"];
 
+					# Haalt het klantnummer uit de input
+					$aantal = $_POST["aantal"];
+
 					# Stopt alle informatie in de functie om het in het winkelmandje te krijgen
-					addCart($db, $klantnummer, $productnummer);
+					addCart($db, $klantnummer, $productnummer, $aantal);
 				}
 			?>
 		</div>

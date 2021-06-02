@@ -51,6 +51,16 @@ img {
   height: 0px;
 }
 
+.inputNumber {
+  border: 2px solid rgb(168, 168, 168);
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: white;
+  text-align: center;
+  width: 3em;
+  height: 3em;
+}
+
 @media screen and (max-width: 900px) {
   #disabled {
     padding: 1em;

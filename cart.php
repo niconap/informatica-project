@@ -48,6 +48,7 @@
 									</div>
 									<div class="itemPrijs">
 										<br><p class="Prijs">€'.$row["prijs"].'</p>
+										<br><p>'.$row["aantal"].' stuk(s)</p>
 									</div>
 									<form method="GET">
 										<input class="invisbleInput" type="productnummer" placeholder="productnummer" name="productnummer">
@@ -56,7 +57,7 @@
 								</div>';
 
 							$prijs = $row["prijs"];
-							$totaalprijs = $totaalprijs + $prijs;
+							$totaalprijs = $totaalprijs + $row["aantal"]*$prijs;
 						}
 						echo '</div>';
 						echo '<div id="afrekenen">

@@ -10,11 +10,10 @@ $resultaat = $db->query($sql);
 
 
 # Vraagt het aantal items op in de winkelwagen
-$sqlAantal = 'SELECT count(productnummer) FROM winkelwagen WHERE klantnummer='.$_SESSION["klantnummer"];
+$sqlAantal = 'SELECT count(*) FROM winkelwagen WHERE klantnummer='.$_SESSION["klantnummer"];
 $resultaatAantal = $db->query($sqlAantal);
-
-$sqlrow = $resultaatAantal->fetch(SQLITE3_NUM);
-$aantalItems = $sqlrow['count(productnummer)'];
+$rowAantal = $resultaatAantal->fetch(SQLITE3_NUM);
+$aantalItems = $rowAantal['count(*)'];
 
 
 # Verwijdert het item uit de winkelwagen
@@ -60,8 +59,16 @@ function bestel($db, $klantnummer){
 		$stmtitem->execute();
 		$stmtitem=null;
 
-		# Wijzigt de voorraad naar 0
-		$sqledit = 'UPDATE producten SET voorraad=0 WHERE productnummer=:productnummer';
+		# Wijzigt de voorraad naar de voorraad min het bestelde aantal
+		# Checkt het aantal in de voorraad
+		$sqlVoorraad = 'SELECT voorraad FROM winkelwagen WHERE klantnummer='.$_SESSION["klantnummer"];
+		$resultaatVoorraad = $db->query($sqlVoorraad);
+		$rowVoorraad = $resultaatVoorraad->fetch(SQLITE3_NUM);
+		$voorraad = $rowVoorraad['count'];
+		$nieuweVoorraad = $voorraad - $row["aantal"];
+
+		
+		$sqledit = 'UPDATE producten SET voorraad='.$nieuweVoorraad.' WHERE productnummer=:productnummer';
 		if(!$stmtitem = $db->prepare($sqledit)) {
 			header("location: ../cart.php");
 			exit;
