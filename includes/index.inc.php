@@ -16,8 +16,6 @@ function checkVoorraad($db, $productnummer) {
 
 	if($voorraad >= 2) {
 		echo '<script>window.location.href="./product.php?productnummer='.$productnummer.'"</script>';
-		//header("location: ../account.php");
-		//header("location: ../product.php?productnummer=".$productnummer);
 		exit;
 	} else {
 		exit;
