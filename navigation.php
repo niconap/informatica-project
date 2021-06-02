@@ -1,4 +1,4 @@
-<?php 
+<?php
 # Start de sessie om te kijken of iemand ingelogd is
 session_start();
 

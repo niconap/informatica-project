@@ -4,6 +4,7 @@
 		<title>Tim's Art - Bestelling succesvol</title>
 		<link href="./css/style.css?v=2" rel="stylesheet" type="text/css">
 		<link href="./css/pmsucces.css?v=3d" rel="stylesheet" type="text/css">
+		<link rel="icon" href="./images/icon.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>

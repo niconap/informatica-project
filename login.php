@@ -4,6 +4,7 @@
 		<title>Tim's Art - Log in</title>
 		<link href="./css/style.css" rel="stylesheet" type="text/css">
 		<link href="./css/login.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="./images/icon.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
