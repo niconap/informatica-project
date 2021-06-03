@@ -1,4 +1,7 @@
 # Informaticaproject van Nico, Koen, Simone en Felix
+Wanneer de webserver is opgestart en de "localhost" is opgezocht in de webbrowser en de website laat geen normale hoofdpagina zien?
+Probeer het bestand te wijzigen in www/core/dbconnectie.php. Hier staat verder beschreven wat gedaan kan worden.
+Mocht het nogsteeds niet werken kan je altijd een mail sturen naar koenvdh7@gmail.com of een magistermail naar 1 van ons.
 
 ### Info
 Dit project is een webshop voor Tim Smelik, een kunstenaar. Tim wilde graag zijn kunstwerken verkopen en daarvoor hebben wij deze website gemaakt. Mensen kunnen hier een account aanmaken, alle kunstwerken bekijken en ze bestellen. Het enige wat er nog niet in zit is een betalingssysteem.
