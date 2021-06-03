@@ -139,17 +139,20 @@
 
             # Checkt hoe veel getallen er zitten in de array en op basis daarvan wordt het productnummer eruit gehaald
             switch ($lengte) {
-                case $lengte == 2:
+                case $lengte == 1:
                     $productnummer = substr($int, 0);
                     break;
+                case $lengte == 2:
+                    $productnummer = substr($int, 0, 2);
+                    break;
                 case $lengte == 3:
-                    $productnummer = substr($int, 1, 2);
+                    $productnummer = substr($int, 0, 3);
                     break;
                 case $lengte == 4:
-                    $productnummer = substr($int, 2, 3);
+                    $productnummer = substr($int, 0, 4);
                     break;
                 case $lengte == 5:
-                    $productnummer = substr($int, 3, 4);
+                    $productnummer = substr($int, 0, 5);
                     break;
             }
 

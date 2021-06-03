@@ -5,7 +5,7 @@ if (!isset($_SESSION["klantnummer"])) {
 }
 
 # Vraagt de items op uit de "bestellingen" tabel uit de database
-$sql = 'SELECT bestelnummer, besteldatum, productnaam, prijs, productafbeelding FROM bestellingen, producten WHERE klantnummer='.$_SESSION["klantnummer"].' AND producten.productnummer=bestellingen.productnummer';
+$sql = 'SELECT bestelnummer, besteldatum, productnaam, prijs, productafbeelding, aantal FROM bestellingen, producten WHERE klantnummer='.$_SESSION["klantnummer"].' AND producten.productnummer=bestellingen.productnummer';
 $resultaat = $db->query($sql);
 
 

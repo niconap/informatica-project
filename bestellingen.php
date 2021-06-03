@@ -53,6 +53,9 @@
 								<div class="itemPrijs">
 									<p>€'.$row["prijs"].'</p>
 								</div>
+								<div class="itemAantal">
+									<p>'.$row["aantal"].' stuk(s)</p>
+								</div>
 							</div>';
 					}
 					echo '</div>';

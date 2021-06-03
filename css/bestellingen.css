@@ -15,18 +15,18 @@
 #items {
   border: 2px solid black;
   padding: 10px;
-  max-width: 45em;
+  max-width: 50em;
 }
 
 .item {
   border: 2px solid black;
-  width: 44em;
+  width: 49em;
   height: 6em;
   margin: 7px;
 
   display: grid;
-  grid-template-areas: 'foto nummer datum naam prijs';
-  grid-template-columns: 5em, 5em, 5em, 5em, 5em;
+  grid-template-areas: 'foto nummer datum naam prijs aantal';
+  grid-template-columns: 5em, 5em, 5em, 5em, 5em, 5em;
 }
 
 .itemFoto {
@@ -44,6 +44,10 @@
 
 .itemPrijs {
   grid-area: prijs;
+}
+
+.itemAantal {
+  grid-area: aantal;
 }
 
 .itemDatum {

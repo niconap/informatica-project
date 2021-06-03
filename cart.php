@@ -51,9 +51,9 @@
 										<br><p class="Prijs">€'.$row["prijs"].'</p>
 										<br><p>'.$row["aantal"].' stuk(s)</p>
 									</div>
-									<form method="GET">
+									<form method="POST">
 										<input class="invisbleInput" type="productnummer" placeholder="productnummer" name="productnummer">
-										<button class="verwijder" type="submit" name="'.$row["productnummer"].'">Verwijder</button>
+										<button class="verwijder" type="submit" name='.$row["productnummer"].'>Verwijder</button>
 									</form>
 								</div>';
 
@@ -79,12 +79,37 @@
 				
 					
 					# Registreert of iemand de verwijder knop indrukt
-					if (isset($_GET["productnummer"])) {
-						$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+					if (isset($_POST["productnummer"])) {
+						# Maakt van de $_POST array een string
+						$POST = print_r($_POST, true);
 						
-						# Haalt het productnummer uit de url
-						$productnummer = substr($url, strrpos($url, '&') + 1, 1);				
+						# Haalt alle nummers uit de string
+						$int = (int) filter_var($POST, FILTER_SANITIZE_NUMBER_INT);
+
+						#telt het aantal nummers
+						$lengte = strlen($int);
+
+						switch ($lengte) {
+							case $lengte == 1:
+								$productnummer = substr($int, 0);
+								break;
+							case $lengte == 2:
+								$productnummer = substr($int, 0, 2);
+								break;
+							case $lengte == 3:
+								$productnummer = substr($int, 0, 3);
+								break;
+							case $lengte == 4:
+								$productnummer = substr($int, 0, 4);
+								break;
+							case $lengte == 5:
+								$productnummer = substr($int, 0, 5);
+								break;
+						}
+			
+						# Haalt de klantnummer uit de sessie			
 						$klantnummer = $_SESSION["klantnummer"];
+						echo $productnummer;
 
 						removeCart($db, $klantnummer, $productnummer);
 					}
