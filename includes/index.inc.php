@@ -1,13 +1,14 @@
 <?php
-# Checkt of de voorraad groter dan 1 is
+# Checkt of de voorraad groter dan 1 is en gaat dan naar de productpagina als dit waar is
 function checkVoorraad($db, $productnummer) {
-	$sqlcheck = 'SELECT voorraad FROM producten WHERE productnummer='.$productnummer;
+	$sqlcheck = 'SELECT voorraad FROM producten WHERE productnummer=:productnummer';
 	
 	if(!$stmt = $db->prepare($sqlcheck)) {
-		header("location: ../index.php");
+		header("location: ../index.php?henk");
 		exit;
 	}
 
+	$stmt->bindParam(':productnummer', $productnummer);
 	$stmt->execute();
 	$row = $stmt->fetch();
 	$voorraad = $row["voorraad"];
@@ -18,6 +19,15 @@ function checkVoorraad($db, $productnummer) {
 		echo '<script>window.location.href="./product.php?productnummer='.$productnummer.'"</script>';
 		exit;
 	} else {
+		# Haalt het klantnummer uit de sessie
+		$klantnummer = $_SESSION["klantnummer"];
+
+		# Wanneer de voorraad groter dan 1 is ga je eerst al naar de productpagina
+		$aantal = 1;
+
+		# Stopt alle informatie in de functie om het in het winkelmandje te krijgen
+		addCart($db, $klantnummer, $productnummer, $aantal);
+
 		exit;
 	}
 }
@@ -28,7 +38,7 @@ function addCart($db, $klantnummer, $productnummer, $aantal) {
 	$sqlcheck = 'SELECT * FROM winkelwagen WHERE klantnummer='.$klantnummer.' AND productnummer='.$productnummer;
 	
 	if(!$stmt = $db->prepare($sqlcheck)) {
-		header("location: ../index.php?henk");
+		header("location: ../index.php");
 		exit;
 	}
 

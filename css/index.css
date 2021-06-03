@@ -81,6 +81,7 @@
   display: inline-block;
   height: 450px;
   overflow: hidden;
+  margin-bottom: 3em;
 }
 
 .itemimg {
