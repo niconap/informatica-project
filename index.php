@@ -134,21 +134,22 @@
 			# Haalt alle nummers uit de string
 			$int = (int) filter_var($POST, FILTER_SANITIZE_NUMBER_INT);
 
+            #telt het aantal nummers
             $lengte = strlen($int);
 
             # Checkt hoe veel getallen er zitten in de array en op basis daarvan wordt het productnummer eruit gehaald
             switch ($lengte) {
-                case 2:
-                    $productnummer = substr($int, 0, 1);
+                case $lengte == 2:
+                    $productnummer = substr($int, 0);
                     break;
-                case 3:
-                    $productnummer = substr($int, 0, 2);
+                case $lengte == 3:
+                    $productnummer = substr($int, 1, 2);
                     break;
-                case 4:
-                    $productnummer = substr($int, 0, 3);
+                case $lengte == 4:
+                    $productnummer = substr($int, 2, 3);
                     break;
-                case 5:
-                    $productnummer = substr($int, 0, 4);
+                case $lengte == 5:
+                    $productnummer = substr($int, 3, 4);
                     break;
             }
 
