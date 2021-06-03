@@ -67,7 +67,7 @@
                         <span class="itemprice">€'.$this->itemprice.'</span>
                         <form method="POST">
                             <input class="invisibleInput" name="productnummer">
-                            <button type="submit" id="button" name="'.$this->itemid.'">In winkelmandje</a>
+                            <button type="submit" id="button" name='.$this->itemid.'>In winkelmandje</a>
                         </form>
                     </div>';
                 } else {
@@ -133,21 +133,27 @@
 			
 			# Haalt alle nummers uit de string
 			$int = (int) filter_var($POST, FILTER_SANITIZE_NUMBER_INT);
-						
-			# Haalt het productnummer uit de nummers
-			$productnummer = substr($int, 0, 1);
+
+            $lengte = strlen($int);
+
+            # Checkt hoe veel getallen er zitten in de array en op basis daarvan wordt het productnummer eruit gehaald
+            switch ($lengte) {
+                case 2:
+                    $productnummer = substr($int, 0, 1);
+                    break;
+                case 3:
+                    $productnummer = substr($int, 0, 2);
+                    break;
+                case 4:
+                    $productnummer = substr($int, 0, 3);
+                    break;
+                case 5:
+                    $productnummer = substr($int, 0, 4);
+                    break;
+            }
 
             # Checkt of er 2 of meer producten op voorraad zijn en stuurt dan het persoon door naar die productpagina
             checkVoorraad($db, $productnummer);
-
-            # Haalt het klantnummer uit de sessie
-            $klantnummer = $_SESSION["klantnummer"];
-
-            # Wanneer de voorraad groter dan 1 is ga je eerst al naar de productpagina
-            $aantal = 1;
-
-            # Stopt alle informatie in de functie om het in het winkelmandje te krijgen
-            addCart($db, $klantnummer, $productnummer, $aantal);
 		}
     ?>
 </body>
